@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Aesthetics - Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00d9ff", // Replaced from user request for consistency
+              "background-light": "#f5f8f8",
+              "background-dark": "#0a0e1a", // From user request
+            },
+            fontFamily: {
+              "display": ["Fira Code", "monospace"] // From user request
+            },
+            borderRadius: {"DEFAULT": "6px", "lg": "1rem", "xl": "1.5rem", "full": "9999px"}, // Adjusted default
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-gray-200">
+<!-- Fixed Header -->
+<header class="fixed top-0 left-0 right-0 z-50 flex h-[70px] w-full items-center justify-end border-b border-solid border-[rgba(48,54,61,0.3)] bg-[rgba(10,14,26,0.85)] px-8 shadow-lg backdrop-blur-[10px]">
+<div class="flex items-center gap-5">
+<a class="text-gray-400 opacity-90 transition-all hover:scale-110 hover:text-primary hover:opacity-100" data-alt="Email Icon" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="text-gray-400 opacity-90 transition-all hover:scale-110 hover:text-primary hover:opacity-100" data-alt="LinkedIn Icon" href="#">
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+<a class="text-gray-400 opacity-90 transition-all hover:scale-110 hover:text-primary hover:opacity-100" data-alt="GitHub Icon" href="#">
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</header>
+<!-- Floating Navigation Dots -->
+<nav class="fixed top-1/2 right-8 z-50 -translate-y-1/2">
+<ul class="flex flex-col items-center gap-4">
+<!-- Home -->
+<li class="group relative">
+<a class="block h-2.5 w-2.5 rounded-full bg-gray-600 opacity-60 transition-all group-hover:h-3 group-hover:w-3 group-hover:bg-gray-400 group-hover:opacity-90" data-alt="Navigate to Home section" href="#home"></a>
+<span class="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 whitespace-nowrap rounded border border-solid border-white/10 bg-gray-900/95 px-3 py-1.5 text-sm font-medium text-gray-50 opacity-0 transition-opacity group-hover:opacity-100">Home</span>
+</li>
+<!-- About -->
+<li class="group relative">
+<a class="block h-2.5 w-2.5 rounded-full bg-gray-600 opacity-60 transition-all group-hover:h-3 group-hover:w-3 group-hover:bg-gray-400 group-hover:opacity-90" data-alt="Navigate to About section" href="#about"></a>
+<span class="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 whitespace-nowrap rounded border border-solid border-white/10 bg-gray-900/95 px-3 py-1.5 text-sm font-medium text-gray-50 opacity-0 transition-opacity group-hover:opacity-100">About</span>
+</li>
+<!-- Skills (Active) -->
+<li class="group relative">
+<a class="block h-3.5 w-3.5 rounded-full bg-primary opacity-100 shadow-[0_0_8px_rgba(0,217,255,0.5)] transition-all" data-alt="Navigate to Skills section" href="#skills"></a>
+<span class="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 whitespace-nowrap rounded border border-solid border-white/10 bg-gray-900/95 px-3 py-1.5 text-sm font-medium text-gray-50 opacity-0 transition-opacity group-hover:opacity-100">Skills</span>
+</li>
+<!-- Experience -->
+<li class="group relative">
+<a class="block h-2.5 w-2.5 rounded-full bg-gray-600 opacity-60 transition-all group-hover:h-3 group-hover:w-3 group-hover:bg-gray-400 group-hover:opacity-90" data-alt="Navigate to Experience section" href="#experience"></a>
+<span class="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 whitespace-nowrap rounded border border-solid border-white/10 bg-gray-900/95 px-3 py-1.5 text-sm font-medium text-gray-50 opacity-0 transition-opacity group-hover:opacity-100">Experience</span>
+</li>
+<!-- Projects -->
+<li class="group relative">
+<a class="block h-2.5 w-2.5 rounded-full bg-gray-600 opacity-60 transition-all group-hover:h-3 group-hover:w-3 group-hover:bg-gray-400 group-hover:opacity-90" data-alt="Navigate to Projects section" href="#projects"></a>
+<span class="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 whitespace-nowrap rounded border border-solid border-white/10 bg-gray-900/95 px-3 py-1.5 text-sm font-medium text-gray-50 opacity-0 transition-opacity group-hover:opacity-100">Projects</span>
+</li>
+</ul>
+</nav>
+<!-- Main Content Placeholders -->
+<main class="container mx-auto px-8 py-32">
+<div class="flex flex-col gap-16">
+<section class="min-h-screen" id="home">
+<div class="rounded-xl border border-dashed border-gray-700 p-8">
+<h1 class="text-4xl font-bold text-gray-100">Section: Home</h1>
+<p class="mt-4 text-gray-400">This is a placeholder for the main content of the portfolio. As you scroll, the navigation dots on the right will update to reflect the current section. The header remains fixed at the top with a glassmorphism effect.</p>
+</div>
+</section>
+<section class="min-h-screen" id="about">
+<div class="rounded-xl border border-dashed border-gray-700 p-8">
+<h2 class="text-4xl font-bold text-gray-100">Section: About</h2>
+<p class="mt-4 text-gray-400">Content placeholder for the "About" section. Notice how the fixed UI elements overlay the scrolling content area without being obtrusive, maintaining a clean and modern aesthetic.</p>
+</div>
+</section>
+<section class="min-h-screen" id="skills">
+<div class="rounded-xl border border-dashed border-primary/50 p-8 ring-4 ring-primary/20">
+<h2 class="text-4xl font-bold text-primary">Section: Skills (Active)</h2>
+<p class="mt-4 text-gray-400">This section is currently marked as 'active' by the navigation dot on the right, which is larger, brighter, and has a subtle glow. This provides clear visual feedback to the user about their location on the page.</p>
+</div>
+</section>
+<section class="min-h-screen" id="experience">
+<div class="rounded-xl border border-dashed border-gray-700 p-8">
+<h2 class="text-4xl font-bold text-gray-100">Section: Experience</h2>
+<p class="mt-4 text-gray-400">Content placeholder for the "Experience" section. Hovering over the inactive dots reveals a tooltip with the section name, improving usability and context.</p>
+</div>
+</section>
+<section class="min-h-screen" id="projects">
+<div class="rounded-xl border border-dashed border-gray-700 p-8">
+<h2 class="text-4xl font-bold text-gray-100">Section: Projects</h2>
+<p class="mt-4 text-gray-400">Content placeholder for the "Projects" section. The combination of the fixed header and floating navigation provides a comprehensive yet minimal way to navigate the portfolio.</p>
+</div>
+</section>
+</div>
+</main>
+</body></html>
