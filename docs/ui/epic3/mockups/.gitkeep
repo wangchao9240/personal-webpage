@@ -1,0 +1,14 @@
+# Mockups Directory
+
+This directory will contain generated UI mockups for Epic 3: Navigation System.
+
+## Expected Files
+
+- `navigation-full-view.png` - Full page composition showing both header and floating nav
+- `header-detail.png` - Close-up view of header with contact icons
+- `floating-nav-detail.png` - Close-up view of floating navigation dots with states
+
+## How to Generate
+
+Follow the instructions in `../QUICKSTART.md` to generate mockups using Stitch.
+
