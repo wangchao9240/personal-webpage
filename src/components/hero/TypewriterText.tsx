@@ -18,10 +18,121 @@ export interface TypewriterTextProps {
 }
 
 /**
- * Typewriter Text Component
+ * Token type for syntax highlighting
+ */
+interface Token {
+  text: string;
+  type: 'keyword' | 'variable' | 'property' | 'string' | 'punctuation' | 'whitespace';
+}
+
+/**
+ * Tokenize code string into typed segments for syntax highlighting
+ */
+function tokenizeCode(code: string): Token[] {
+  const tokens: Token[] = [];
+  let remaining = code;
+
+  while (remaining.length > 0) {
+    let matched = false;
+
+    // Match keywords (const, let, var)
+    const keywordMatch = remaining.match(/^(const|let|var)\b/);
+    if (keywordMatch) {
+      tokens.push({ text: keywordMatch[0], type: 'keyword' });
+      remaining = remaining.slice(keywordMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // Match strings in quotes
+    const stringMatch = remaining.match(/^'[^']*'/);
+    if (stringMatch) {
+      tokens.push({ text: stringMatch[0], type: 'string' });
+      remaining = remaining.slice(stringMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // Match property names (word followed by colon)
+    const propertyMatch = remaining.match(/^(\w+)(?=\s*:)/);
+    if (propertyMatch) {
+      tokens.push({ text: propertyMatch[0], type: 'property' });
+      remaining = remaining.slice(propertyMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // Match variable names (after const/let/var, before =)
+    const variableMatch = remaining.match(/^(\w+)(?=\s*=)/);
+    if (variableMatch && tokens.length > 0 && tokens[tokens.length - 1]?.type === 'keyword') {
+      tokens.push({ text: variableMatch[0], type: 'variable' });
+      remaining = remaining.slice(variableMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // Match punctuation and brackets
+    const punctMatch = remaining.match(/^([{}\[\]:,=;()])/);
+    if (punctMatch) {
+      tokens.push({ text: punctMatch[0], type: 'punctuation' });
+      remaining = remaining.slice(punctMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // Match whitespace (including newlines)
+    const whitespaceMatch = remaining.match(/^(\s+)/);
+    if (whitespaceMatch) {
+      tokens.push({ text: whitespaceMatch[0], type: 'whitespace' });
+      remaining = remaining.slice(whitespaceMatch[0].length);
+      matched = true;
+      continue;
+    }
+
+    // If no pattern matched, take one character as punctuation
+    if (!matched) {
+      tokens.push({ text: remaining[0], type: 'punctuation' });
+      remaining = remaining.slice(1);
+    }
+  }
+
+  return tokens;
+}
+
+/**
+ * Get CSS class for token type
+ */
+function getTokenClass(type: Token['type']): string {
+  switch (type) {
+    case 'keyword':
+      return 'text-keyword'; // Pink
+    case 'variable':
+      return 'text-terminal-green'; // Terminal green
+    case 'property':
+      return 'text-property'; // Light green
+    case 'string':
+      return 'text-string'; // Yellow
+    case 'punctuation':
+      return 'text-secondary'; // Gray
+    case 'whitespace':
+      return '';
+    default:
+      return 'text-terminal-green';
+  }
+}
+
+/**
+ * Typewriter Text Component with Syntax Highlighting
  *
- * Displays text with a typewriter animation effect and optional blinking cursor.
- * Designed for code content with syntax highlighting support.
+ * Displays code with typewriter animation effect and syntax highlighting.
+ * Colors are applied as characters are typed, matching the design mockup.
+ *
+ * Color scheme:
+ * - Keywords (const): Pink (#ff79c6)
+ * - Variables (skills): Terminal green (#00ff41)
+ * - Properties (frontend, backend): Light green (#50fa7b)
+ * - Strings ('React', 'Vue'): Yellow (#f1fa8c)
+ * - Punctuation ({, }, [, ]): Gray (#8b949e)
  *
  * @example
  * ```tsx
@@ -40,13 +151,56 @@ export function TypewriterText({
 }: TypewriterTextProps) {
   const { displayedText, isComplete } = useTypewriter({ text, speed, delay });
 
+  // Tokenize the full text for reference
+  const tokens = React.useMemo(() => tokenizeCode(text), [text]);
+
+  // Calculate which tokens to display based on current character count
+  const renderTokens = () => {
+    let charCount = 0;
+    const elements: React.ReactNode[] = [];
+
+    for (let i = 0; i < tokens.length; i++) {
+      const token = tokens[i];
+      const tokenLength = token.text.length;
+
+      if (charCount >= displayedText.length) {
+        // We've rendered all displayed characters
+        break;
+      }
+
+      if (charCount + tokenLength <= displayedText.length) {
+        // Render entire token
+        const className = getTokenClass(token.type);
+        elements.push(
+          <span key={i} className={className}>
+            {token.text}
+          </span>
+        );
+        charCount += tokenLength;
+      } else {
+        // Render partial token
+        const partialText = token.text.slice(0, displayedText.length - charCount);
+        const className = getTokenClass(token.type);
+        elements.push(
+          <span key={i} className={className}>
+            {partialText}
+          </span>
+        );
+        charCount += partialText.length;
+        break;
+      }
+    }
+
+    return elements;
+  };
+
   return (
-    <pre className="whitespace-pre-wrap font-mono">
+    <pre className="whitespace-pre-wrap font-mono text-[18px] leading-[1.6]">
       <code>
-        {displayedText}
+        {renderTokens()}
         {showCursor && (
           <span
-            className={`inline-block w-2 h-5 ml-0.5 bg-cursor-color ${
+            className={`inline-block w-[2px] h-5 ml-0.5 bg-cursor-color ${
               isComplete ? 'animate-cursor-blink' : ''
             }`}
             aria-hidden="true"
