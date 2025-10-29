@@ -11,86 +11,59 @@ export default function Home() {
       {/* Floating Navigation Dots */}
       <FloatingNav />
 
-      {/* Main Content */}
-      <main className="min-h-screen">
-        {/* Hero Section */}
-        <HeroSection />
+      {/* Hero Section - Full Screen (Epic 2) */}
+      <HeroSection />
 
-        {/* About Section - Placeholder for Epic 4 */}
-        <section
-          id="about"
-          className="min-h-screen flex items-center justify-center px-4 pt-20"
-        >
-          <div className="text-center max-w-4xl">
-            <h2 className="text-4xl font-bold mb-6 text-terminal-green">About Me</h2>
-            <div className="rounded-xl border border-dashed border-[#30363d] p-8">
-              <p className="text-[#8b949e] text-lg leading-relaxed">
-                About section coming soon in Epic 4...
-                <br />
-                <br />
-                This placeholder section demonstrates the scroll spy functionality.
-                Notice how the navigation dot updates as you scroll through different sections.
+      {/* Main Content - Other Sections */}
+      <main className="container mx-auto px-8 py-32">
+        <div className="flex flex-col gap-16">
+          {/* About Section - Placeholder for Epic 4 */}
+          <section id="about" className="min-h-screen">
+            <div className="rounded-xl border border-dashed border-[#4b5563] p-8">
+              <h2 className="text-4xl font-bold text-[#f3f4f6]">Section: About</h2>
+              <p className="mt-4 text-[#9ca3af]">
+                Content placeholder for the "About" section. Notice how the fixed UI elements 
+                overlay the scrolling content area without being obtrusive, maintaining a clean 
+                and modern aesthetic.
               </p>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Skills Section - Placeholder for Epic 4 */}
-        <section
-          id="skills"
-          className="min-h-screen flex items-center justify-center px-4 pt-20"
-        >
-          <div className="text-center max-w-4xl">
-            <h2 className="text-4xl font-bold mb-6 text-terminal-green">Skills</h2>
-            <div className="rounded-xl border border-dashed border-[#30363d] p-8">
-              <p className="text-[#8b949e] text-lg leading-relaxed">
-                Skills section coming soon in Epic 4...
-                <br />
-                <br />
-                Technical skills showcase will be displayed here with visual cards
-                and animations.
+          {/* Skills Section - Placeholder for Epic 4 */}
+          <section id="skills" className="min-h-screen">
+            <div className="rounded-xl border border-dashed border-[#00d9ff]/50 p-8 ring-4 ring-[#00d9ff]/20">
+              <h2 className="text-4xl font-bold text-[#00d9ff]">Section: Skills (Active)</h2>
+              <p className="mt-4 text-[#9ca3af]">
+                This section is currently marked as 'active' by the navigation dot on the right, 
+                which is larger, brighter, and has a subtle glow. This provides clear visual 
+                feedback to the user about their location on the page.
               </p>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Experience Section - Placeholder for Epic 4 */}
-        <section
-          id="experience"
-          className="min-h-screen flex items-center justify-center px-4 pt-20"
-        >
-          <div className="text-center max-w-4xl">
-            <h2 className="text-4xl font-bold mb-6 text-terminal-green">Experience</h2>
-            <div className="rounded-xl border border-dashed border-[#30363d] p-8">
-              <p className="text-[#8b949e] text-lg leading-relaxed">
-                Experience section coming soon in Epic 4...
-                <br />
-                <br />
-                Work experience timeline will be displayed here with detailed
-                descriptions of roles and achievements.
+          {/* Experience Section - Placeholder for Epic 4 */}
+          <section id="experience" className="min-h-screen">
+            <div className="rounded-xl border border-dashed border-[#4b5563] p-8">
+              <h2 className="text-4xl font-bold text-[#f3f4f6]">Section: Experience</h2>
+              <p className="mt-4 text-[#9ca3af]">
+                Content placeholder for the "Experience" section. Hovering over the inactive 
+                dots reveals a tooltip with the section name, improving usability and context.
               </p>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Projects Section - Placeholder for Epic 5 */}
-        <section
-          id="projects"
-          className="min-h-screen flex items-center justify-center px-4 pt-20"
-        >
-          <div className="text-center max-w-4xl">
-            <h2 className="text-4xl font-bold mb-6 text-terminal-green">Projects</h2>
-            <div className="rounded-xl border border-dashed border-[#30363d] p-8">
-              <p className="text-[#8b949e] text-lg leading-relaxed">
-                Projects section coming soon in Epic 5...
-                <br />
-                <br />
-                Featured projects with live demos and GitHub links will be showcased here
-                with interactive cards and hover effects.
+          {/* Projects Section - Placeholder for Epic 5 */}
+          <section id="projects" className="min-h-screen">
+            <div className="rounded-xl border border-dashed border-[#4b5563] p-8">
+              <h2 className="text-4xl font-bold text-[#f3f4f6]">Section: Projects</h2>
+              <p className="mt-4 text-[#9ca3af]">
+                Content placeholder for the "Projects" section. The combination of the fixed 
+                header and floating navigation provides a comprehensive yet minimal way to 
+                navigate the portfolio.
               </p>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
     </>
   );
