@@ -1,26 +1,94 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Hero Section Colors */
+  --bg-hero: #0a0e1a;
+  --bg-terminal: #0d1117;
+  --bg-terminal-header: #161b22;
+  --border-terminal: #30363d;
+  
+  /* Terminal Text Colors */
+  --text-terminal-green: #00ff41;
+  --text-terminal-muted: #8b949e;
+  --text-keyword: #ff79c6;
+  --text-string: #f1fa8c;
+  --text-property: #50fa7b;
+  --text-secondary: #8b949e;
+  
+  /* Geometric Background Colors */
+  --geo-primary: #00d9ff;
+  --geo-secondary: #bd93f9;
+  --geo-tertiary: #50fa7b;
+  
+  /* UI Element Colors */
+  --btn-primary: #00d9ff;
+  --btn-hover: #00b8d9;
+  --cursor-color: #00ff41;
+  
+  /* Terminal Header Dots */
+  --dot-red: #ff5f56;
+  --dot-yellow: #ffbd2e;
+  --dot-green: #27c93f;
+  
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  
+  /* Shadows */
+  --shadow-terminal: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-button: 0 8px 20px rgba(0, 217, 255, 0.3);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-hero);
+  --color-foreground: var(--text-terminal-green);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Terminal Colors */
+  --color-terminal: var(--bg-terminal);
+  --color-terminal-header: var(--bg-terminal-header);
+  --color-terminal-border: var(--border-terminal);
+  --color-terminal-green: var(--text-terminal-green);
+  --color-terminal-muted: var(--text-terminal-muted);
+  
+  /* Syntax Highlighting */
+  --color-keyword: var(--text-keyword);
+  --color-string: var(--text-string);
+  --color-property: var(--text-property);
+  --color-secondary: var(--text-secondary);
+  --color-cursor-color: var(--cursor-color);
+  
+  /* Traffic Light Dots */
+  --color-dot-red: var(--dot-red);
+  --color-dot-yellow: var(--dot-yellow);
+  --color-dot-green: var(--dot-green);
+  
+  /* Button Colors */
+  --color-btn-primary: var(--btn-primary);
+  --color-btn-hover: var(--btn-hover);
+  
+  /* Geometric Colors */
+  --color-geo-primary: var(--geo-primary);
+  --color-geo-secondary: var(--geo-secondary);
+  --color-geo-tertiary: var(--geo-tertiary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-hero);
+  color: var(--text-terminal-green);
+  font-family: var(--font-mono), 'Consolas', 'Monaco', monospace;
+}
+
+/* Cursor Blink Animation */
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 530ms steps(1) infinite;
 }
