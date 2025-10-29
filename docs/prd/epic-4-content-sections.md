@@ -19,6 +19,7 @@ Implement the About, Skills, and Experience sections that communicate the candid
 ### Context
 
 These three sections provide the foundation of the candidate's professional profile:
+
 - **About:** 2-3 sentence value proposition
 - **Skills:** Categorized technical skills (Frontend, Backend, Tools)
 - **Experience:** Timeline of 4 work positions with highlights
@@ -39,11 +40,13 @@ All sections follow the card-based design aesthetic with scroll entrance animati
 ## User Stories
 
 ### Story 4.1: Create Reusable UI Components
+
 **As a** developer  
 **I want to** build reusable UI components for cards and badges  
 **So that** all sections have consistent styling
 
 **Acceptance Criteria:**
+
 - [ ] Card component created with consistent styling
 - [ ] TechBadge component created for technology display
 - [ ] SectionWrapper component created for scroll animations
@@ -52,6 +55,7 @@ All sections follow the card-based design aesthetic with scroll entrance animati
 - [ ] TypeScript interfaces defined for all props
 
 **Components to Create:**
+
 ```
 src/components/ui/
 ├── Card.tsx           # Base card with shadow, border, padding
@@ -60,6 +64,7 @@ src/components/ui/
 ```
 
 **Card Styling:**
+
 - Background: `bg-bg-card`
 - Border: `border border-gray-800`
 - Padding: `p-6` or `p-card`
@@ -67,6 +72,7 @@ src/components/ui/
 - Border radius: `rounded-lg`
 
 **Files:**
+
 - `src/components/ui/Card.tsx`
 - `src/components/ui/TechBadge.tsx`
 - `src/components/ui/SectionWrapper.tsx`
@@ -74,11 +80,13 @@ src/components/ui/
 ---
 
 ### Story 4.2: Create Data Files for Content
+
 **As a** developer  
 **I want to** store all content in separate TypeScript files  
 **So that** content updates are easy and don't require component changes
 
 **Acceptance Criteria:**
+
 - [ ] Skills data file created with Frontend, Backend, Tools categories
 - [ ] Experience data file created with 4 work positions
 - [ ] TypeScript types defined for Skills and Experience
@@ -86,12 +94,13 @@ src/components/ui/
 - [ ] All content from resume accurately transcribed
 
 **Data Structure:**
+
 ```typescript
 // skills.ts
 export const skills = {
-  frontend: ["React", "Vue", "TypeScript", "HTML5", "CSS3", "JavaScript"],
-  backend: ["Node.js", "Express"],
-  tools: ["Git", "CMS management", "SSR"]
+  frontend: ['React', 'Vue', 'TypeScript', 'HTML5', 'CSS3', 'JavaScript'],
+  backend: ['Node.js', 'Express'],
+  tools: ['Git', 'CMS management', 'SSR'],
 };
 
 // experience.ts
@@ -109,6 +118,7 @@ export const experiences: WorkExperience[] = [
 ```
 
 **Files:**
+
 - `src/data/skills.ts`
 - `src/data/experience.ts`
 - `src/types/experience.ts`
@@ -116,11 +126,13 @@ export const experiences: WorkExperience[] = [
 ---
 
 ### Story 4.3: Build About Section
+
 **As a** recruiter  
 **I want to** read a concise summary of the candidate's value proposition  
 **So that** I quickly understand their expertise and focus
 
 **Acceptance Criteria:**
+
 - [ ] AboutSection component created
 - [ ] Section has ID "about" for navigation
 - [ ] Uses Card component for content container
@@ -131,29 +143,34 @@ export const experiences: WorkExperience[] = [
 - [ ] Section wrapper max-width: 6xl, centered
 
 **Content:**
+
 ```
-Creative problem solver with 6+ years of front-end development experience. 
-I specialize in transforming complex requirements into elegant, user-friendly 
-web applications. Proficient in React, Vue, and modern JavaScript ecosystem, 
+Creative problem solver with 6+ years of front-end development experience.
+I specialize in transforming complex requirements into elegant, user-friendly
+web applications. Proficient in React, Vue, and modern JavaScript ecosystem,
 with a strong focus on performance optimization and clean code.
 ```
 
 **Animation:**
+
 - Fade in + slide up (30px) on scroll into view
 - Duration: 600ms
 - Trigger once
 
 **Files:**
+
 - `src/components/sections/AboutSection.tsx`
 
 ---
 
 ### Story 4.4: Build Skills Section
+
 **As a** recruiter  
 **I want to** see a categorized list of technical skills  
 **So that** I can quickly assess the candidate's tech stack proficiency
 
 **Acceptance Criteria:**
+
 - [ ] SkillsSection component created
 - [ ] Section has ID "skills" for navigation
 - [ ] Skills organized into 3 categories: Frontend, Backend, Tools
@@ -164,6 +181,7 @@ with a strong focus on performance optimization and clean code.
 - [ ] Scroll entrance animation for skill cards
 
 **Layout:**
+
 ```
 Skills Section
 ├── Frontend Category
@@ -178,6 +196,7 @@ Skills Section
 ```
 
 **Tech Icons Mapping:**
+
 - React → FaReact
 - Vue → FaVuejs
 - TypeScript → SiTypescript
@@ -186,16 +205,19 @@ Skills Section
 - (etc., from React Icons)
 
 **Files:**
+
 - `src/components/sections/SkillsSection.tsx`
 
 ---
 
 ### Story 4.5: Build Experience Timeline Section
+
 **As a** recruiter  
 **I want to** see a timeline of work experience  
 **So that** I can understand the candidate's career progression
 
 **Acceptance Criteria:**
+
 - [ ] ExperienceSection component created
 - [ ] Section has ID "experience" for navigation
 - [ ] Timeline visualization implemented (left line, right content)
@@ -206,33 +228,39 @@ Skills Section
 - [ ] Scroll entrance animation (staggered for each item)
 
 **Timeline Design:**
+
 - Vertical line on left side
 - Dots at each position
 - Cards on right with company/position info
 - Subtle connecting lines
 
 **Experience Data (from Resume):**
+
 1. Shanghai Jiufang Cloud (Nov 2020 - Apr 2024)
 2. Shanghai YouBiHui Training School (Aug 2020 - Oct 2020)
 3. Huizhong Business Consulting (May 2018 - Jun 2020)
 4. Qingdao Jiaoyin Information Technology (Oct 2017 - Aug 2018)
 
 **Animation:**
+
 - Each timeline item fades and slides in
 - Stagger delay: 100ms between items
 - Smooth reveal from top to bottom
 
 **Files:**
+
 - `src/components/sections/ExperienceSection.tsx`
 
 ---
 
 ### Story 4.6: Implement Scroll Animations for Sections
+
 **As a** recruiter  
 **I want to** see sections smoothly animate into view  
 **So that** the portfolio feels polished and engaging
 
 **Acceptance Criteria:**
+
 - [ ] All sections use SectionWrapper with entrance animation
 - [ ] Framer Motion used for smooth animations
 - [ ] Animation triggers when section enters viewport
@@ -241,6 +269,7 @@ Skills Section
 - [ ] No performance impact (60fps maintained)
 
 **Animation Specifications:**
+
 ```tsx
 // Standard scroll reveal
 <motion.div
@@ -252,6 +281,7 @@ Skills Section
 ```
 
 **Files:**
+
 - Enhanced all section components with animations
 
 ---
@@ -290,13 +320,16 @@ Skills Section
 ## Dependencies
 
 **Requires:**
+
 - Epic 1: Project Foundation
 - Epic 3: Navigation System (for section IDs)
 
 **Blocks:**
+
 - None
 
 **Technical Dependencies:**
+
 - Framer Motion (for animations)
 - React Icons (for tech stack icons)
 - Resume data (Chasen_Wang_Resume.md)
@@ -307,11 +340,11 @@ Skills Section
 
 ### Risks
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Content accuracy errors | Low | Low | Cross-reference with resume |
-| Animation performance issues | Low | Medium | Use lightweight animations, test on target hardware |
-| Icon library size | Low | Low | React Icons is tree-shakeable |
+| Risk                         | Probability | Impact | Mitigation                                          |
+| ---------------------------- | ----------- | ------ | --------------------------------------------------- |
+| Content accuracy errors      | Low         | Low    | Cross-reference with resume                         |
+| Animation performance issues | Low         | Medium | Use lightweight animations, test on target hardware |
+| Icon library size            | Low         | Low    | React Icons is tree-shakeable                       |
 
 ### Risk Mitigation Plan
 
@@ -324,16 +357,20 @@ Skills Section
 ## Technical Notes
 
 ### Section IDs
+
 - About: `id="about"`
 - Skills: `id="skills"`
 - Experience: `id="experience"`
 
 ### Data Architecture
+
 All content stored in `src/data/` folder:
+
 - Skills: `skills.ts`
 - Experience: `experience.ts`
 
 ### Component Hierarchy
+
 ```
 Sections
 ├── AboutSection
@@ -370,4 +407,3 @@ Sections
 **Created:** 2025-10-29  
 **Previous Epic:** Epic 3 - Navigation System  
 **Next Epic:** Epic 5 - Projects Showcase
-

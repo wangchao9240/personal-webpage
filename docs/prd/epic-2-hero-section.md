@@ -42,11 +42,13 @@ The Hero section is the first thing recruiters see when visiting the portfolio. 
 ## User Stories
 
 ### Story 2.1: Create Custom Hooks for Hero Section
+
 **As a** developer  
 **I want to** implement custom React hooks for typewriter effect and intersection observer  
 **So that** reusable logic is separated from components
 
 **Acceptance Criteria:**
+
 - [ ] `useTypewriter` hook created with text, speed, and delay parameters
 - [ ] Hook returns `displayedText` and `isComplete` states
 - [ ] `useIntersectionObserver` hook created for scroll detection
@@ -55,6 +57,7 @@ The Hero section is the first thing recruiters see when visiting the portfolio. 
 - [ ] Hooks are tested manually with simple components
 
 **Technical Details:**
+
 ```typescript
 // useTypewriter signature
 interface UseTypewriterOptions {
@@ -68,17 +71,20 @@ interface UseTypewriterOptions {
 ```
 
 **Files:**
+
 - `src/hooks/useTypewriter.ts`
 - `src/hooks/useIntersectionObserver.ts`
 
 ---
 
 ### Story 2.2: Build Terminal Window Component
+
 **As a** developer  
 **I want to** create a terminal-style window component with authentic design  
 **So that** the tech stack can be displayed in a visually appealing code format
 
 **Acceptance Criteria:**
+
 - [ ] Terminal window component created with proper styling
 - [ ] Window includes terminal header (three dots: red, yellow, green)
 - [ ] Code content area uses monospace font (Fira Code or Consolas)
@@ -88,6 +94,7 @@ interface UseTypewriterOptions {
 - [ ] Component follows architecture component template
 
 **Visual Requirements:**
+
 - Terminal background: Dark (#0d1117 or similar)
 - Terminal text: Light green (#00ff41 for terminal aesthetic)
 - Header dots: macOS-style traffic lights
@@ -95,26 +102,30 @@ interface UseTypewriterOptions {
 - Card-style shadow and border
 
 **Code Format to Display:**
+
 ```javascript
 const skills = {
-  frontend: ["React", "Next.js", "TypeScript", "Tailwind"],
-  backend: ["Node.js", "Express", "PostgreSQL"],
-  tools: ["Git", "Docker", "AWS"]
-}
+  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
+  backend: ['Node.js', 'Express', 'PostgreSQL'],
+  tools: ['Git', 'Docker', 'AWS'],
+};
 ```
 
 **Files:**
+
 - `src/components/hero/TerminalWindow.tsx`
 - `src/components/hero/TypewriterText.tsx`
 
 ---
 
 ### Story 2.3: Implement Typewriter Effect in Terminal
+
 **As a** recruiter  
 **I want to** see the tech stack appear character-by-character in a typewriter animation  
 **So that** the portfolio feels dynamic and engaging
 
 **Acceptance Criteria:**
+
 - [ ] TypewriterText component integrates useTypewriter hook
 - [ ] Animation completes in approximately 5 seconds
 - [ ] Cursor blinks at the end of typed text
@@ -123,22 +134,26 @@ const skills = {
 - [ ] No performance issues (smooth 60fps)
 
 **Technical Requirements:**
+
 - Speed: ~50ms per character
 - Total time: ~5 seconds for full tech stack
 - Cursor: Blinking green block or underscore
 - Font: Monospace with syntax highlighting
 
 **Files:**
+
 - `src/components/hero/TypewriterText.tsx` (enhanced with animation)
 
 ---
 
 ### Story 2.4: Create Geometric Code Background with Three.js
+
 **As a** recruiter  
 **I want to** see a mesmerizing geometric code pattern background  
 **So that** the portfolio stands out with unique visual identity
 
 **Acceptance Criteria:**
+
 - [ ] React Three Fiber canvas component created
 - [ ] Geometric shapes formed from code characters displayed
 - [ ] Slow rotation/morphing animation implemented
@@ -148,6 +163,7 @@ const skills = {
 - [ ] Respects `prefers-reduced-motion` accessibility setting
 
 **Technical Requirements:**
+
 - Library: React Three Fiber + @react-three/drei
 - Animation: Subtle rotation (not overwhelming)
 - Code characters: Use geometric arrangement
@@ -156,22 +172,26 @@ const skills = {
 - Fallback: Static gradient background if WebGL fails
 
 **Performance Considerations:**
+
 - Lazy load Three.js components
 - Optimize particle count for performance
 - Monitor frame rate and adjust complexity
 - Wrap in try-catch for error handling
 
 **Files:**
+
 - `src/components/hero/GeometricBackground.tsx`
 
 ---
 
 ### Story 2.5: Assemble Hero Section Component
+
 **As a** recruiter  
 **I want to** see a cohesive Hero section when I land on the portfolio  
 **So that** I get an immediate sense of the candidate's skills and aesthetic
 
 **Acceptance Criteria:**
+
 - [ ] HeroSection component created following architecture template
 - [ ] GeometricBackground rendered as background layer
 - [ ] TerminalWindow rendered centered in viewport
@@ -182,6 +202,7 @@ const skills = {
 - [ ] Layout is responsive (desktop-first per MVP requirements)
 
 **Layout Structure:**
+
 ```
 HeroSection
 ├── GeometricBackground (absolute, z-index: -1)
@@ -192,22 +213,26 @@ HeroSection
 ```
 
 **Interaction:**
+
 - Run button uses `scrollToSection('about')` utility
 - Smooth scroll with offset for fixed header if applicable
 - Button has hover effect (scale or glow)
 
 **Files:**
+
 - `src/components/sections/HeroSection.tsx`
 - `src/lib/utils.ts` (scrollToSection function)
 
 ---
 
 ### Story 2.6: Optimize Hero Section Performance
+
 **As a** developer  
 **I want to** ensure the Hero section performs smoothly  
 **So that** the first impression is not marred by lag or jank
 
 **Acceptance Criteria:**
+
 - [ ] Three.js components lazy-loaded with dynamic import
 - [ ] Frame rate monitored and stays above 50fps average
 - [ ] Initial load time for Hero section < 2 seconds
@@ -217,17 +242,19 @@ HeroSection
 - [ ] `prefers-reduced-motion` media query respected
 
 **Performance Targets:**
+
 - Frame rate: 60fps target, 50fps minimum
 - Initial load: < 2 seconds
 - Bundle size: Three.js isolated in separate chunk
 - Lighthouse performance score: > 90
 
 **Technical Implementation:**
+
 ```typescript
 // Lazy load Three.js component
 const GeometricBackground = dynamic(
   () => import('@/components/hero/GeometricBackground'),
-  { 
+  {
     ssr: false,
     loading: () => <StaticGradientBackground />
   }
@@ -235,6 +262,7 @@ const GeometricBackground = dynamic(
 ```
 
 **Files:**
+
 - Enhanced `src/components/sections/HeroSection.tsx` with lazy loading
 - `src/components/hero/StaticGradientBackground.tsx` (fallback)
 
@@ -276,13 +304,16 @@ const GeometricBackground = dynamic(
 ## Dependencies
 
 **Requires:**
+
 - Epic 1: Project Foundation & Setup (MUST be completed first)
 
 **Blocks:**
+
 - Epic 3: Navigation System (needs Hero section ID for scroll target)
 - Epic 4: Content Sections (Run button target)
 
 **Dependencies:**
+
 - `framer-motion` (for subtle animations)
 - `@react-three/fiber`, `@react-three/drei`, `three` (for 3D background)
 - Custom hooks: useTypewriter, useIntersectionObserver
@@ -293,12 +324,12 @@ const GeometricBackground = dynamic(
 
 ### Risks
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Three.js performance issues | Medium | High | Code splitting, performance monitoring, static fallback |
-| WebGL compatibility | Low | Medium | Feature detection, graceful fallback to static background |
-| Complexity causing delays | Medium | Medium | Break into small stories, time-box Three.js implementation |
-| Animation causing motion sickness | Low | Low | Respect prefers-reduced-motion, keep animations subtle |
+| Risk                              | Probability | Impact | Mitigation                                                 |
+| --------------------------------- | ----------- | ------ | ---------------------------------------------------------- |
+| Three.js performance issues       | Medium      | High   | Code splitting, performance monitoring, static fallback    |
+| WebGL compatibility               | Low         | Medium | Feature detection, graceful fallback to static background  |
+| Complexity causing delays         | Medium      | Medium | Break into small stories, time-box Three.js implementation |
+| Animation causing motion sickness | Low         | Low    | Respect prefers-reduced-motion, keep animations subtle     |
 
 ### Risk Mitigation Plan
 
@@ -339,6 +370,7 @@ const GeometricBackground = dynamic(
 ### Code Examples
 
 Terminal Window Color Scheme:
+
 ```css
 --color-bg-terminal: #0d1117;
 --color-terminal-green: #00ff41;
@@ -372,4 +404,3 @@ Terminal Window Color Scheme:
 **Last Updated:** 2025-10-29  
 **Previous Epic:** Epic 1 - Project Foundation  
 **Next Epic:** Epic 3 - Navigation System
-

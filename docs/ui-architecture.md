@@ -8,9 +8,9 @@
 
 ## Change Log
 
-| Date | Version | Description | Author |
-|------|---------|-------------|--------|
-| 2025-10-29 | 1.0 | Initial frontend architecture document | Winston (Architect) |
+| Date       | Version | Description                            | Author              |
+| ---------- | ------- | -------------------------------------- | ------------------- |
+| 2025-10-29 | 1.0     | Initial frontend architecture document | Winston (Architect) |
 
 ---
 
@@ -36,6 +36,7 @@ npx create-next-app@latest personal-website --typescript --tailwind --app
 ```
 
 This will set up:
+
 - ✅ Next.js 14+ with App Router
 - ✅ TypeScript for type safety
 - ✅ Tailwind CSS for styling
@@ -51,20 +52,20 @@ Based on the brainstorming session requirements (geometric animations, typewrite
 
 ### Technology Stack Table
 
-| Category | Technology | Version | Purpose | Rationale |
-|----------|-----------|---------|---------|-----------|
-| **Framework** | Next.js | 14+ | React framework with SSG/SSR capabilities | Best-in-class React framework with built-in optimization, SEO, and static export for GitHub Pages deployment |
-| **Language** | TypeScript | 5.x | Type-safe JavaScript | Prevents bugs, improves IDE support, better maintainability for portfolio code quality |
-| **UI Library** | React | 18.x | Component-based UI library | Industry standard, rich ecosystem, excellent for interactive UIs |
-| **Styling** | Tailwind CSS | 3.x | Utility-first CSS framework | Rapid development, consistent design system, small bundle size with purging |
-| **Animation** | Framer Motion | 10.x | Production-ready animation library | Smooth scroll animations, entrance effects, hover interactions, Spring physics for natural motion |
-| **3D/Canvas** | React Three Fiber | 8.x | React renderer for Three.js | Geometric code background animation in hero section, WebGL performance |
-| **Typewriter Effect** | Custom Hook | N/A | Terminal typewriter animation | Lightweight custom implementation, full control over timing and behavior |
-| **Routing** | Next.js App Router | Built-in | Single-page routing with anchors | Native Next.js routing with hash navigation (#about, #projects) |
-| **Icons** | React Icons | 5.x | Icon library | Comprehensive icon set for tech stack logos (React, Vue, etc.), social media icons |
-| **Code Formatting** | Prettier | 3.x | Code formatter | Consistent code style across project |
-| **Linting** | ESLint | 8.x | Code quality tool | Catch errors early, enforce best practices |
-| **Scroll Detection** | Intersection Observer API | Native | Scroll-triggered animations | Native browser API for entrance animations, no dependencies, excellent performance |
+| Category              | Technology                | Version  | Purpose                                   | Rationale                                                                                                    |
+| --------------------- | ------------------------- | -------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Framework**         | Next.js                   | 14+      | React framework with SSG/SSR capabilities | Best-in-class React framework with built-in optimization, SEO, and static export for GitHub Pages deployment |
+| **Language**          | TypeScript                | 5.x      | Type-safe JavaScript                      | Prevents bugs, improves IDE support, better maintainability for portfolio code quality                       |
+| **UI Library**        | React                     | 18.x     | Component-based UI library                | Industry standard, rich ecosystem, excellent for interactive UIs                                             |
+| **Styling**           | Tailwind CSS              | 3.x      | Utility-first CSS framework               | Rapid development, consistent design system, small bundle size with purging                                  |
+| **Animation**         | Framer Motion             | 10.x     | Production-ready animation library        | Smooth scroll animations, entrance effects, hover interactions, Spring physics for natural motion            |
+| **3D/Canvas**         | React Three Fiber         | 8.x      | React renderer for Three.js               | Geometric code background animation in hero section, WebGL performance                                       |
+| **Typewriter Effect** | Custom Hook               | N/A      | Terminal typewriter animation             | Lightweight custom implementation, full control over timing and behavior                                     |
+| **Routing**           | Next.js App Router        | Built-in | Single-page routing with anchors          | Native Next.js routing with hash navigation (#about, #projects)                                              |
+| **Icons**             | React Icons               | 5.x      | Icon library                              | Comprehensive icon set for tech stack logos (React, Vue, etc.), social media icons                           |
+| **Code Formatting**   | Prettier                  | 3.x      | Code formatter                            | Consistent code style across project                                                                         |
+| **Linting**           | ESLint                    | 8.x      | Code quality tool                         | Catch errors early, enforce best practices                                                                   |
+| **Scroll Detection**  | Intersection Observer API | Native   | Scroll-triggered animations               | Native browser API for entrance animations, no dependencies, excellent performance                           |
 
 **Note:** No contact form or form library needed - contact information will be displayed as static icons (Email, LinkedIn, GitHub) in the header.
 
@@ -154,6 +155,7 @@ personal-website/
 ```
 
 ### File Naming Conventions
+
 - **Components**: PascalCase (`HeroSection.tsx`, `Card.tsx`)
 - **Hooks**: camelCase with `use` prefix (`useTypewriter.ts`, `useScrollSpy.ts`)
 - **Utils/Data**: camelCase (`constants.ts`, `skills.ts`)
@@ -167,7 +169,7 @@ personal-website/
 
 Standard template for creating new components:
 
-```typescript
+````typescript
 'use client'; // Only if client-side interactivity needed (animations, state, etc.)
 
 import React from 'react';
@@ -194,11 +196,11 @@ interface ComponentNameProps {
 
 /**
  * ComponentName - Brief description of what this component does
- * 
+ *
  * @example
  * ```tsx
- * <ComponentName 
- *   title="Example Title" 
+ * <ComponentName
+ *   title="Example Title"
  *   description="Optional description"
  * />
  * ```
@@ -220,11 +222,12 @@ export const ComponentName: React.FC<ComponentNameProps> = ({
 
 // For default exports (sections), use:
 export default ComponentName;
-```
+````
 
 ### Naming Conventions
 
 **Components:**
+
 - **Page Sections**: `HeroSection.tsx`, `AboutSection.tsx`, `ProjectsSection.tsx`
   - Use `Section` suffix for main page sections
   - Default export for sections
@@ -237,21 +240,25 @@ export default ComponentName;
   - Named exports, grouped in feature folders
 
 **Hooks:**
+
 - Pattern: `use[Feature].ts`
 - Examples: `useTypewriter.ts`, `useScrollSpy.ts`, `useIntersectionObserver.ts`
 - Named exports: `export const useTypewriter = () => { ... }`
 
 **Data Files:**
+
 - Pattern: `[feature].ts`
 - Examples: `skills.ts`, `projects.ts`, `experience.ts`
 - Named exports for data objects
 
 **Types:**
+
 - Pattern: `[feature].ts` in `types/` folder
 - Example: `project.ts`, `experience.ts`
 - Export individual types: `export interface Project { ... }`
 
 **CSS/Styling:**
+
 - Tailwind utility classes preferred
 - Custom CSS only when necessary
 - BEM naming for custom classes: `hero__terminal`, `card--elevated`
@@ -267,27 +274,28 @@ export default ComponentName;
    - Omit for pure presentational components
 
 2. **Import Order**:
+
    ```typescript
    // 1. React imports
    import React from 'react';
-   
+
    // 2. Third-party libraries
    import { motion } from 'framer-motion';
    import { FaReact, FaVuejs } from 'react-icons/fa';
-   
+
    // 3. Internal components
    import { Card } from '@/components/ui/Card';
    import { TechBadge } from '@/components/ui/TechBadge';
-   
+
    // 4. Hooks
    import { useTypewriter } from '@/hooks/useTypewriter';
-   
+
    // 5. Types
    import type { Project } from '@/types/project';
-   
+
    // 6. Data
    import { projects } from '@/data/projects';
-   
+
    // 7. Utils/Constants
    import { ANIMATION_DURATION } from '@/lib/constants';
    ```
@@ -322,6 +330,7 @@ export default ComponentName;
 **No Global State Management Library Needed**
 
 For this portfolio website, we will NOT use Redux, Zustand, or MobX because:
+
 - ✅ No backend data synchronization needed
 - ✅ No complex user flows or multi-step processes
 - ✅ Minimal shared state across components
@@ -358,8 +367,14 @@ State Organization:
 
 import { useState, useEffect } from 'react';
 
-const SECTION_IDS = ['hero', 'about', 'skills', 'experience', 'projects'] as const;
-export type SectionId = typeof SECTION_IDS[number];
+const SECTION_IDS = [
+  'hero',
+  'about',
+  'skills',
+  'experience',
+  'projects',
+] as const;
+export type SectionId = (typeof SECTION_IDS)[number];
 
 /**
  * useScrollSpy - Tracks which section is currently in viewport
@@ -425,7 +440,7 @@ export const useTypewriter = ({
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    
+
     const startTyping = () => {
       let currentIndex = 0;
 
@@ -472,11 +487,7 @@ interface UseIntersectionObserverOptions {
 export const useIntersectionObserver = (
   options: UseIntersectionObserverOptions = {}
 ) => {
-  const {
-    threshold = 0.1,
-    rootMargin = '0px',
-    triggerOnce = true,
-  } = options;
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -524,10 +535,12 @@ export const useIntersectionObserver = (
 **Single Page + Anchor Links (Hash Navigation)**
 
 This portfolio uses:
+
 - Single route: `/` (root)
 - Anchor links: `/#about`, `/#skills`, `/#experience`, `/#projects`
 
 **Benefits:**
+
 - ✅ Smooth scrolling experience (no page reloads)
 - ✅ Shareable section links
 - ✅ Browser back/forward button support
@@ -549,19 +562,19 @@ export default function Home() {
       <section id="hero">
         <HeroSection />
       </section>
-      
+
       <section id="about">
         <AboutSection />
       </section>
-      
+
       <section id="skills">
         <SkillsSection />
       </section>
-      
+
       <section id="experience">
         <ExperienceSection />
       </section>
-      
+
       <section id="projects">
         <ProjectsSection />
       </section>
@@ -579,7 +592,7 @@ export const scrollToSection = (sectionId: string) => {
   if (element) {
     const yOffset = -80; // Header height offset
     const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    
+
     window.scrollTo({
       top: y,
       behavior: 'smooth'
@@ -626,7 +639,7 @@ export const FloatingNav: React.FC = () => {
               aria-label={`Navigate to ${label}`}
             />
             {/* Label on hover */}
-            <span className="absolute right-6 top-1/2 -translate-y-1/2 
+            <span className="absolute right-6 top-1/2 -translate-y-1/2
                            px-2 py-1 bg-gray-900 text-white text-sm rounded
                            opacity-0 group-hover:opacity-100 transition-opacity
                            whitespace-nowrap pointer-events-none">
@@ -743,12 +756,14 @@ This is a pure frontend static site with no backend, APIs, or external services.
 ### Deployment: Vercel (Recommended)
 
 **Setup:**
+
 1. Push code to GitHub repository
 2. Import project in Vercel dashboard
 3. Auto-detects Next.js configuration
 4. Automatic deployments on push to main branch
 
 **Zero configuration needed** - Vercel automatically:
+
 - Builds with `next build`
 - Optimizes static assets
 - Provides HTTPS and global CDN
@@ -806,57 +821,67 @@ npm run dev
 ### Critical Coding Rules
 
 **1. Client vs Server Components**
+
 - ❌ Don't use `'use client'` on every component by default
 - ✅ Only add `'use client'` when using hooks, event handlers, or browser APIs
 - ✅ Keep sections and layout components as Server Components when possible
 
 **2. Import Paths**
+
 - ❌ Don't use relative imports: `../../components/Card`
 - ✅ Always use path aliases: `@/components/Card`
 - Configured in `tsconfig.json` with `"@/*": ["./src/*"]`
 
 **3. TypeScript Strictness**
+
 - ❌ Don't use `any` type
 - ❌ Don't use `// @ts-ignore`
 - ✅ Define proper interfaces for all props
 - ✅ Use `unknown` if type is truly unknown, then narrow with type guards
 
 **4. Performance**
+
 - ❌ Don't define functions inside JSX: `onClick={() => handleClick()}`
 - ✅ Extract handlers: `onClick={handleClick}`
 - ❌ Don't create objects/arrays in render: `style={{ margin: 10 }}`
 - ✅ Define outside component or use `useMemo`
 
 **5. Accessibility**
+
 - ✅ All interactive elements must have accessible labels
 - ✅ Use semantic HTML (`<nav>`, `<section>`, `<article>`)
 - ✅ Ensure keyboard navigation works (Tab, Enter, Space)
 - ✅ Add `aria-label` to icon-only buttons
 
 **6. Images**
+
 - ❌ Don't use `<img>` tag
 - ✅ Use Next.js `<Image>` component for optimization
 - ⚠️ For static export, set `unoptimized: true` in `next.config.js`
 
 **7. Animations**
+
 - ✅ Use Framer Motion for complex animations
 - ✅ Respect `prefers-reduced-motion` media query
 - ❌ Don't animate on every render (causes performance issues)
 - ✅ Trigger animations once on mount or scroll into view
 
 **8. State Management**
+
 - ❌ Don't create global state unless absolutely necessary
 - ✅ Keep state close to where it's used
 - ✅ Use custom hooks to share stateful logic
 - ❌ Don't put static data (projects, skills) in state
 
 **9. Data Files**
+
 - ✅ Store all content in `src/data/` folder
 - ✅ Export as TypeScript objects with proper types
 - ❌ Don't hardcode content in components
 - ✅ Makes updates easier and content centralized
 
 **10. Error Handling**
+
 - ✅ Add null checks before accessing DOM elements
 - ✅ Wrap Three.js/WebGL code in try-catch
 - ✅ Provide fallbacks for failed animations
@@ -865,6 +890,7 @@ npm run dev
 ### Quick Reference
 
 **Common Commands:**
+
 ```bash
 # Development
 npm run dev              # Start dev server (http://localhost:3000)
@@ -881,6 +907,7 @@ npx prettier --write .   # Format all files
 ```
 
 **Key Import Patterns:**
+
 ```typescript
 // Components
 import { Card } from '@/components/ui/Card';
@@ -903,6 +930,7 @@ import { ANIMATION_DURATION } from '@/lib/constants';
 ```
 
 **File Naming Quick Guide:**
+
 - Components: `PascalCase.tsx` → `HeroSection.tsx`
 - Hooks: `camelCase.ts` → `useTypewriter.ts`
 - Data: `camelCase.ts` → `projects.ts`
@@ -910,10 +938,11 @@ import { ANIMATION_DURATION } from '@/lib/constants';
 - Utils: `camelCase.ts` → `utils.ts`
 
 **Common Tailwind Patterns:**
+
 ```tsx
 // Card with hover effect
-<div className="bg-bg-card border border-gray-800 rounded-lg p-6 
-                shadow-card hover:shadow-card-hover 
+<div className="bg-bg-card border border-gray-800 rounded-lg p-6
+                shadow-card hover:shadow-card-hover
                 transition-all duration-normal">
 
 // Section wrapper
@@ -930,6 +959,7 @@ import { ANIMATION_DURATION } from '@/lib/constants';
 ```
 
 **Framer Motion Common Patterns:**
+
 ```tsx
 // Fade in on scroll
 <motion.div
@@ -955,6 +985,7 @@ import { ANIMATION_DURATION } from '@/lib/constants';
 ```
 
 **Project-Specific Patterns:**
+
 ```typescript
 // Section IDs (must match)
 const SECTION_IDS = ['hero', 'about', 'skills', 'experience', 'projects'];
@@ -966,7 +997,7 @@ scrollToSection('about');
 const { displayedText, isComplete } = useTypewriter({
   text: 'const skills = {...}',
   speed: 50,
-  delay: 500
+  delay: 500,
 });
 
 // Active section tracking
@@ -976,6 +1007,7 @@ const activeSection = useScrollSpy();
 ### Code Review Checklist
 
 Before committing code, verify:
+
 - [ ] All imports use `@/` path alias
 - [ ] No `any` types used
 - [ ] Components have proper TypeScript interfaces
@@ -991,9 +1023,10 @@ Before committing code, verify:
 
 ## Summary
 
-This frontend architecture document provides a complete blueprint for building the personal portfolio website with Next.js 14+. 
+This frontend architecture document provides a complete blueprint for building the personal portfolio website with Next.js 14+.
 
 **Key Architectural Decisions:**
+
 - ✅ Next.js 14+ with App Router and TypeScript
 - ✅ Single-page architecture with smooth scroll and hash navigation
 - ✅ Minimal state management (no Redux/Zustand needed)
@@ -1004,6 +1037,7 @@ This frontend architecture document provides a complete blueprint for building t
 - ✅ No backend, APIs, or testing in MVP
 
 **Next Steps:**
+
 1. Initialize Next.js project with recommended dependencies
 2. Set up project structure following the defined directory layout
 3. Implement custom hooks (useTypewriter, useScrollSpy, useIntersectionObserver)
@@ -1016,7 +1050,5 @@ This frontend architecture document provides a complete blueprint for building t
 
 ---
 
-*Architecture document created by Winston (Architect) on October 29, 2025*
-*Based on brainstorming session results from Mary (Business Analyst)*
-
-
+_Architecture document created by Winston (Architect) on October 29, 2025_
+_Based on brainstorming session results from Mary (Business Analyst)_

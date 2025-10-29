@@ -19,6 +19,7 @@ Implement an intuitive navigation system with right-side floating dot navigation
 ### Context
 
 Based on brainstorming decisions, the navigation system consists of:
+
 1. **Floating Navigation Dots** (right side, middle) - for section jumping
 2. **Header Contact Icons** (top right, fixed) - Email, LinkedIn, GitHub
 
@@ -38,11 +39,13 @@ This provides always-accessible navigation without cluttering the minimalist des
 ## User Stories
 
 ### Story 3.1: Create Scroll Spy Hook
+
 **As a** developer  
 **I want to** implement a scroll spy hook that tracks the active section  
 **So that** navigation can highlight the current section
 
 **Acceptance Criteria:**
+
 - [ ] `useScrollSpy` hook created following architecture template
 - [ ] Hook tracks section IDs: hero, about, skills, experience, projects
 - [ ] Returns current active section ID
@@ -52,16 +55,19 @@ This provides always-accessible navigation without cluttering the minimalist des
 - [ ] Properly cleans up event listeners
 
 **Files:**
+
 - `src/hooks/useScrollSpy.ts`
 
 ---
 
 ### Story 3.2: Build Floating Navigation Component
+
 **As a** recruiter  
 **I want to** see a floating dot navigation on the right side  
 **So that** I can quickly jump to different sections
 
 **Acceptance Criteria:**
+
 - [ ] FloatingNav component created
 - [ ] Positioned fixed on right side, vertically centered
 - [ ] 5 navigation dots (Home, About, Skills, Experience, Projects)
@@ -72,6 +78,7 @@ This provides always-accessible navigation without cluttering the minimalist des
 - [ ] Uses useScrollSpy hook for active state
 
 **Visual Design:**
+
 - Position: `fixed right-8 top-1/2 -translate-y-1/2`
 - Dots: 3x3 rounded circles
 - Active: Blue (#3b82f6), scale 1.25
@@ -79,16 +86,19 @@ This provides always-accessible navigation without cluttering the minimalist des
 - Hover label: Dark background with white text
 
 **Files:**
+
 - `src/components/layout/FloatingNav.tsx`
 
 ---
 
 ### Story 3.3: Build Header with Contact Icons
+
 **As a** recruiter  
 **I want to** see contact icons at the top of the page  
 **So that** I can quickly reach out via email, LinkedIn, or GitHub
 
 **Acceptance Criteria:**
+
 - [ ] Header component created
 - [ ] Fixed to top of page with subtle background
 - [ ] Contains 3 social/contact icons on the right
@@ -99,27 +109,32 @@ This provides always-accessible navigation without cluttering the minimalist des
 - [ ] Z-index ensures header stays above content
 
 **Contact Information:**
+
 - Email: chasenwang1026@outlook.com
 - LinkedIn: (to be provided)
 - GitHub: (to be provided)
 
 **Visual Design:**
+
 - Background: Semi-transparent dark (`bg-gray-900/80`)
 - Height: ~60-80px
 - Icons: White with hover effect
 - Position: Fixed top, full width
 
 **Files:**
+
 - `src/components/layout/Header.tsx`
 
 ---
 
 ### Story 3.4: Implement Smooth Scroll Utility
+
 **As a** developer  
 **I want to** create a utility function for smooth scrolling  
 **So that** navigation interactions are smooth and consistent
 
 **Acceptance Criteria:**
+
 - [ ] `scrollToSection` function created in utils
 - [ ] Accepts section ID as parameter
 - [ ] Scrolls smoothly with JavaScript `window.scrollTo`
@@ -128,6 +143,7 @@ This provides always-accessible navigation without cluttering the minimalist des
 - [ ] Used by both FloatingNav and any other navigation
 
 **Function Signature:**
+
 ```typescript
 export const scrollToSection = (sectionId: string): void => {
   // Implementation
@@ -135,16 +151,19 @@ export const scrollToSection = (sectionId: string): void => {
 ```
 
 **Files:**
+
 - `src/lib/utils.ts`
 
 ---
 
 ### Story 3.5: Add Keyboard Navigation Support
+
 **As a** keyboard user  
 **I want to** navigate the site using Tab and Enter keys  
 **So that** the site is accessible without a mouse
 
 **Acceptance Criteria:**
+
 - [ ] All navigation dots are keyboard accessible (Tab key)
 - [ ] Enter key on focused dot navigates to section
 - [ ] Focus visible indicator on navigation dots
@@ -153,12 +172,14 @@ export const scrollToSection = (sectionId: string): void => {
 - [ ] Navigation follows accessibility best practices
 
 **Accessibility Requirements:**
+
 - Tab order: logical top-to-bottom
 - Focus indicators: clear visible outline
 - ARIA labels: descriptive (e.g., "Navigate to About section")
 - Keyboard shortcuts: Enter to activate
 
 **Files:**
+
 - Enhanced `src/components/layout/FloatingNav.tsx`
 - Enhanced `src/components/layout/Header.tsx`
 
@@ -198,13 +219,16 @@ export const scrollToSection = (sectionId: string): void => {
 ## Dependencies
 
 **Requires:**
+
 - Epic 1: Project Foundation (hooks, utils)
 - Epic 2: Hero Section (section IDs for navigation)
 
 **Blocks:**
+
 - None (but enhances UX for all sections)
 
 **Technical Dependencies:**
+
 - `useScrollSpy` custom hook
 - Section IDs must match: hero, about, skills, experience, projects
 - React Icons library
@@ -215,11 +239,11 @@ export const scrollToSection = (sectionId: string): void => {
 
 ### Risks
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Scroll spy lag or inaccuracy | Low | Medium | Use passive listeners, optimize calculation |
-| Mobile navigation clutter | Medium | Low | Out of scope for MVP, will address in Epic 6 |
-| Accessibility oversights | Medium | Medium | Follow WCAG guidelines, test with keyboard |
+| Risk                         | Probability | Impact | Mitigation                                   |
+| ---------------------------- | ----------- | ------ | -------------------------------------------- |
+| Scroll spy lag or inaccuracy | Low         | Medium | Use passive listeners, optimize calculation  |
+| Mobile navigation clutter    | Medium      | Low    | Out of scope for MVP, will address in Epic 6 |
+| Accessibility oversights     | Medium      | Medium | Follow WCAG guidelines, test with keyboard   |
 
 ### Risk Mitigation Plan
 
@@ -280,4 +304,3 @@ Navigation System
 **Created:** 2025-10-29  
 **Previous Epic:** Epic 2 - Hero Section  
 **Next Epic:** Epic 4 - Content Sections
-

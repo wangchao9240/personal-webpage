@@ -10,10 +10,11 @@
 
 **Topic:** Personal Portfolio Website Design & Architecture
 
-**Session Goals:** 
+**Session Goals:**
 Design a comprehensive personal portfolio website to showcase projects and experience for recruitment purposes in the Australian job market. The website will serve as a live demonstration of skills and serve as a companion to the resume for hiring managers and recruiters.
 
-**Techniques Used:** 
+**Techniques Used:**
+
 - Question Storming (10 minutes) - Warm-up phase
 - Mind Mapping (40 minutes) - Divergent exploration of each module
 - Prioritization & Categorization (15 minutes) - Convergent phase
@@ -72,6 +73,7 @@ Design a comprehensive personal portfolio website to showcase projects and exper
 #### Branch 1: Hero Section (Homepage/Welcome Area)
 
 **Key Decisions:**
+
 - **Visual Concept**: "Code Aesthetics" - Terminal window on geometric code pattern background
 - **Background**: Geometric code patterns (not Matrix rain, not editor style) with slow rotation/morphing
 - **Center Element**: Terminal-style window displaying real tech stack in code format
@@ -82,12 +84,13 @@ Design a comprehensive personal portfolio website to showcase projects and exper
 - **Philosophy**: Minimal, no excess elements, no scroll-down arrow
 
 **Content Format Selected:**
+
 ```javascript
 const skills = {
-  frontend: ["React", "Next.js", "TypeScript", "Tailwind"],
-  backend: ["Node.js", "Express", "PostgreSQL"],
-  tools: ["Git", "Docker", "AWS"]
-}
+  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
+  backend: ['Node.js', 'Express', 'PostgreSQL'],
+  tools: ['Git', 'Docker', 'AWS'],
+};
 ```
 
 **Design Rationale**: First impression must communicate developer identity while being visually striking and interactive.
@@ -97,6 +100,7 @@ const skills = {
 #### Branch 2: About Me Section
 
 **Key Decisions:**
+
 - **Content Approach**: Value-driven statement (Option B)
 - **Length**: 2-3 sentences maximum
 - **Visual Layout**: Card-style design continuing terminal aesthetic
@@ -104,10 +108,11 @@ const skills = {
 - **Animation**: Scroll entrance animation only
 
 **Finalized Content:**
+
 ```
-Creative problem solver with 6+ years of front-end development experience. 
-I specialize in transforming complex requirements into elegant, user-friendly 
-web applications. Proficient in React, Vue, and modern JavaScript ecosystem, 
+Creative problem solver with 6+ years of front-end development experience.
+I specialize in transforming complex requirements into elegant, user-friendly
+web applications. Proficient in React, Vue, and modern JavaScript ecosystem,
 with a strong focus on performance optimization and clean code.
 ```
 
@@ -118,6 +123,7 @@ with a strong focus on performance optimization and clean code.
 #### Branch 3: Skills Section
 
 **Key Decisions:**
+
 - **Categorization Method**: By type (Option A)
   - Frontend: React, Vue, TypeScript, HTML5, CSS3, JavaScript
   - Backend: Node.js, Express
@@ -133,12 +139,14 @@ with a strong focus on performance optimization and clean code.
 #### Branch 4: Experience Section
 
 **Key Decisions:**
+
 - **Detail Level**: Simplified version (Option B) - 1-2 key highlights per position
 - **Visual Presentation**: Timeline layout showing career progression
 - **Sort Order**: Newest first (2024 → 2017)
 - **Animation**: Entrance animation
 
 **Work History to Display:**
+
 1. Front End Engineer - Shanghai Jiufang Cloud (Nov 2020 - Apr 2024)
 2. Front End Engineer - Shanghai YouBiHui Training School (Aug 2020 - Oct 2020)
 3. Front End Engineer - Huizhong Business Consulting (May 2018 - Jun 2020)
@@ -151,11 +159,12 @@ with a strong focus on performance optimization and clean code.
 #### Branch 5: Projects Section (HIGHEST PRIORITY)
 
 **Key Decisions:**
+
 - **Layout**: 2-column card grid (desktop)
 - **Visual Elements**: Project screenshot/concept image + name + description
 - **Technology Display**: Tech stack with icons + text
 - **Interaction**: Hover lift effect + reveal Live Demo/GitHub buttons
-- **Screenshot Strategy**: 
+- **Screenshot Strategy**:
   - For live projects: Actual interface screenshots
   - For non-screenshotable projects: Concept diagrams
 
@@ -180,6 +189,7 @@ with a strong focus on performance optimization and clean code.
    - Links: Live Demo + GitHub
 
 **Content Template for Each Project:**
+
 - Project name
 - One-sentence description
 - Technology stack list with icons
@@ -191,6 +201,7 @@ with a strong focus on performance optimization and clean code.
 #### Branch 6: Contact Information
 
 **Key Decisions:**
+
 - **Location**: Fixed top navigation bar, upper right corner (Option A)
 - **Content**: Email + LinkedIn + GitHub icons
 - **Visibility**: Always visible as header element
@@ -203,7 +214,8 @@ with a strong focus on performance optimization and clean code.
 ## Idea Categorization
 
 ### Immediate Opportunities
-*Ideas ready to implement now in MVP v1*
+
+_Ideas ready to implement now in MVP v1_
 
 1. **Next.js Single-Page Architecture with Anchor Links**
    - Description: Set up Next.js project with single-page scroll navigation and URL anchor support (/#about, /#projects, etc.)
@@ -250,7 +262,8 @@ with a strong focus on performance optimization and clean code.
 ---
 
 ### Future Innovations
-*Ideas requiring development/research - Second Priority*
+
+_Ideas requiring development/research - Second Priority_
 
 1. **Project Screenshots and Concept Diagrams**
    - Description: Capture actual interface screenshots for live projects, design concept diagrams for ChatGPT Timeline Navigator
@@ -285,11 +298,13 @@ with a strong focus on performance optimization and clean code.
 ---
 
 ### Moonshots
-*Ambitious, transformative concepts - Removed from Scope*
+
+_Ambitious, transformative concepts - Removed from Scope_
 
 Note: User decided to remove all "future enhancement" features from consideration to focus on core MVP experience.
 
 Previously considered but descoped:
+
 - Dark mode toggle
 - Complex page transition animations
 - Downloadable PDF resume with dynamic generation
@@ -302,7 +317,8 @@ Previously considered but descoped:
 ---
 
 ### Insights & Learnings
-*Key realizations from the session*
+
+_Key realizations from the session_
 
 - **Desktop-First is Strategic**: For portfolio targeting recruiters, desktop experience should be prioritized as most hiring managers review candidates on workstations. Mobile can be a secondary iteration.
 
@@ -324,10 +340,11 @@ Previously considered but descoped:
 
 #### #1 Priority: Project Initialization + Basic Architecture
 
-**Rationale:** 
+**Rationale:**
 Establishes foundation for all subsequent work. Next.js setup, routing configuration, and scroll system are prerequisites for implementing any features. Getting this right early prevents costly refactoring later.
 
 **Next steps:**
+
 1. Initialize Next.js project with TypeScript
 2. Set up project structure (components, sections, utils)
 3. Configure Tailwind CSS or chosen styling solution
@@ -337,12 +354,13 @@ Establishes foundation for all subsequent work. Next.js setup, routing configura
 7. Set up Git repository and initial commit
 
 **Resources needed:**
+
 - Next.js 14+ documentation
 - React knowledge
 - Tailwind CSS (or styled-components/CSS modules)
 - Git/GitHub
 
-**Timeline:** 
+**Timeline:**
 2-4 hours for experienced developer, possibly 6-8 hours if learning Next.js simultaneously
 
 ---
@@ -353,6 +371,7 @@ Establishes foundation for all subsequent work. Next.js setup, routing configura
 The hero section is the first impression and the most technically complex feature. It combines geometric code background animation and terminal window with typewriter effect. Tackling this early establishes the visual language for the entire site and provides a sense of accomplishment that motivates continued development.
 
 **Next steps:**
+
 1. Research and select animation library (Canvas API, Three.js, or React Three Fiber)
 2. Implement geometric code pattern background with animation
 3. Design and code terminal window component
@@ -362,13 +381,15 @@ The hero section is the first impression and the most technically complex featur
 7. Test across browsers (Chrome, Firefox, Safari)
 
 **Resources needed:**
+
 - Animation library documentation (Three.js recommended for geometric patterns)
 - Typewriter library or custom implementation
 - Performance profiling tools (Chrome DevTools)
 - Terminal/code aesthetic references
 
-**Timeline:** 
+**Timeline:**
 12-18 hours total:
+
 - Geometric background: 8-12 hours
 - Terminal window + typewriter: 4-6 hours
 
@@ -382,6 +403,7 @@ The hero section is the first impression and the most technically complex featur
 With architecture and hero section complete, implementing remaining sections (About, Skills, Experience, Projects) establishes the complete content flow. Basic styling ensures visual consistency and allows for early user testing and feedback gathering.
 
 **Next steps:**
+
 1. Implement About section with card layout
 2. Create Skills section with categorized card grid
 3. Build Experience section with timeline visualization
@@ -393,13 +415,15 @@ With architecture and hero section complete, implementing remaining sections (Ab
 9. Add header with contact icons (Email, LinkedIn, GitHub)
 
 **Resources needed:**
+
 - Framer Motion or alternative animation library
 - Finalized content text (About description, skills list, experience highlights)
 - Placeholder images for projects (can use colored gradients or stock images)
 - Icon library (React Icons or similar)
 
-**Timeline:** 
+**Timeline:**
 10-15 hours:
+
 - About section: 2-3 hours
 - Skills section: 3-4 hours
 - Experience section: 3-4 hours
@@ -448,15 +472,17 @@ With architecture and hero section complete, implementing remaining sections (Ab
 ### Next Session Planning
 
 **Suggested topics:**
+
 - Design system definition (colors, typography, spacing system)
 - Detailed component wireframing (if needed before coding)
 - Content writing workshop (finalize all copy)
 - Project screenshot/concept diagram creation session
 
-**Recommended timeframe:** 
+**Recommended timeframe:**
 Before beginning implementation or during early development to refine visual details
 
 **Preparation needed:**
+
 - Review Next.js documentation and animation library tutorials
 - Gather visual inspiration for code aesthetics and developer portfolios
 - Draft specific text for About section and project descriptions
@@ -464,5 +490,4 @@ Before beginning implementation or during early development to refine visual det
 
 ---
 
-*Session facilitated using the BMAD-METHOD™ brainstorming framework*
-
+_Session facilitated using the BMAD-METHOD™ brainstorming framework_

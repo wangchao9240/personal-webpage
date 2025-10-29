@@ -19,6 +19,7 @@ Polish the portfolio website with final optimizations, add mobile responsiveness
 ### Context
 
 With all core features complete (Hero, Navigation, Content, Projects), this epic focuses on:
+
 1. **Mobile Responsiveness** - Making the site usable on all devices
 2. **Performance Optimization** - Ensuring fast load times
 3. **Final Polish** - UI/UX refinements and bug fixes
@@ -40,11 +41,13 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 ## User Stories
 
 ### Story 6.1: Implement Mobile Responsiveness
+
 **As a** mobile user  
 **I want to** view the portfolio on my phone or tablet  
 **So that** I can explore the candidate's work on any device
 
 **Acceptance Criteria:**
+
 - [ ] All sections responsive on mobile (320px - 768px)
 - [ ] Hero section scales appropriately on mobile
 - [ ] Navigation adapts (floating dots remain or hamburger menu added)
@@ -55,11 +58,13 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - [ ] No horizontal scroll on any screen size
 
 **Breakpoints (Tailwind):**
+
 - Mobile: < 640px (sm)
 - Tablet: 640px - 1024px (md, lg)
 - Desktop: > 1024px (xl, 2xl)
 
 **Responsive Adjustments:**
+
 - Hero: Reduce terminal window size, simplify 3D background
 - Navigation: Keep floating dots or add hamburger menu
 - Projects: 2 columns → 1 column on mobile
@@ -67,16 +72,19 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - Typography: Reduce font sizes by 10-20% on mobile
 
 **Files:**
+
 - All section components enhanced with responsive classes
 
 ---
 
 ### Story 6.2: Optimize Performance
+
 **As a** recruiter  
 **I want to** experience fast page load times  
 **So that** I don't abandon the site due to slowness
 
 **Acceptance Criteria:**
+
 - [ ] Total bundle size < 500KB (excluding images)
 - [ ] First Contentful Paint (FCP) < 1.5s
 - [ ] Largest Contentful Paint (LCP) < 2.5s
@@ -87,6 +95,7 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - [ ] Unused dependencies removed
 
 **Optimization Techniques:**
+
 - Dynamic imports for Three.js components
 - Image compression (< 300KB per image)
 - Tree-shaking unused code
@@ -94,6 +103,7 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - Use production build for testing
 
 **Performance Checklist:**
+
 - [ ] Run Lighthouse audit
 - [ ] Analyze bundle with `npm run build`
 - [ ] Check Network tab for large files
@@ -101,17 +111,20 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - [ ] Test on slow 3G network
 
 **Files:**
+
 - Updated components with lazy loading
 - Optimized images in `public/images/`
 
 ---
 
 ### Story 6.3: Add SEO and Meta Tags
+
 **As a** recruiter searching online  
 **I want to** find the portfolio through search engines  
 **So that** I can discover the candidate's work
 
 **Acceptance Criteria:**
+
 - [ ] Page title set: "Chasen Wang - Frontend Developer Portfolio"
 - [ ] Meta description added (150-160 characters)
 - [ ] Open Graph tags for social sharing
@@ -121,11 +134,13 @@ Per MVP priorities, mobile was deferred to focus on desktop experience first. No
 - [ ] Sitemap.xml generated (if needed)
 
 **Meta Tags:**
+
 ```tsx
 // In app/layout.tsx or metadata config
 export const metadata = {
   title: 'Chasen Wang - Frontend Developer Portfolio',
-  description: 'Creative problem solver with 6+ years of frontend development experience. Specializing in React, Vue, and Next.js. View my projects and experience.',
+  description:
+    'Creative problem solver with 6+ years of frontend development experience. Specializing in React, Vue, and Next.js. View my projects and experience.',
   openGraph: {
     title: 'Chasen Wang - Frontend Developer',
     description: 'Frontend Developer Portfolio',
@@ -143,6 +158,7 @@ export const metadata = {
 ```
 
 **Files:**
+
 - `src/app/layout.tsx` (metadata export)
 - `public/favicon.ico`
 - `public/og-image.png`
@@ -151,11 +167,13 @@ export const metadata = {
 ---
 
 ### Story 6.4: Cross-Browser Testing and Fixes
+
 **As a** recruiter using any browser  
 **I want to** have a consistent experience  
 **So that** the site works regardless of my browser choice
 
 **Acceptance Criteria:**
+
 - [ ] Tested on Chrome (primary)
 - [ ] Tested on Firefox
 - [ ] Tested on Safari (macOS/iOS)
@@ -166,6 +184,7 @@ export const metadata = {
 - [ ] No browser-specific bugs found
 
 **Testing Checklist:**
+
 - [ ] Navigation works on all browsers
 - [ ] Hero section animations run smoothly
 - [ ] Scroll behavior is consistent
@@ -173,21 +192,25 @@ export const metadata = {
 - [ ] Mobile browsers tested (Safari iOS, Chrome Android)
 
 **Known Browser Considerations:**
+
 - Safari: WebGL performance may vary
 - Firefox: Scroll behavior differences
 - Edge: Generally compatible with Chrome
 
 **Files:**
+
 - Bug fixes in affected components
 
 ---
 
 ### Story 6.5: Final UI/UX Polish
+
 **As a** recruiter  
 **I want to** experience a polished, professional portfolio  
 **So that** I have confidence in the candidate's attention to detail
 
 **Acceptance Criteria:**
+
 - [ ] All spacing and alignment reviewed and fixed
 - [ ] Typography hierarchy clear and consistent
 - [ ] Color contrast meets WCAG AA standards
@@ -198,6 +221,7 @@ export const metadata = {
 - [ ] No visual bugs or glitches
 
 **Polish Checklist:**
+
 - [ ] Consistent padding/margin across sections
 - [ ] Proper line-height for readability
 - [ ] Buttons have clear hover/focus states
@@ -207,17 +231,20 @@ export const metadata = {
 - [ ] Footer added (optional, with copyright)
 
 **Files:**
+
 - Global CSS refinements
 - Component styling enhancements
 
 ---
 
 ### Story 6.6: Deploy to Vercel
+
 **As a** recruiter  
 **I want to** access the portfolio via a live URL  
 **So that** I can view it anytime from anywhere
 
 **Acceptance Criteria:**
+
 - [ ] GitHub repository connected to Vercel
 - [ ] Production build successful
 - [ ] Site accessible via Vercel-provided URL
@@ -228,6 +255,7 @@ export const metadata = {
 - [ ] Build logs show no errors
 
 **Deployment Steps:**
+
 1. Push code to GitHub repository
 2. Import project in Vercel dashboard
 3. Configure build settings (auto-detected for Next.js)
@@ -236,18 +264,21 @@ export const metadata = {
 6. (Optional) Add custom domain
 
 **Vercel Configuration:**
+
 - Build Command: `npm run build`
 - Output Directory: `.next` (auto-detected)
 - Install Command: `npm install`
 - Framework: Next.js (auto-detected)
 
 **Post-Deployment:**
+
 - [ ] Test all links on live site
 - [ ] Verify images load correctly
 - [ ] Check mobile experience on live site
 - [ ] Share URL with user for review
 
 **Files:**
+
 - N/A (deployment platform)
 - Optional: `vercel.json` for custom config
 
@@ -293,6 +324,7 @@ export const metadata = {
 ## Dependencies
 
 **Requires:**
+
 - Epic 1: Project Foundation
 - Epic 2: Hero Section
 - Epic 3: Navigation System
@@ -301,9 +333,11 @@ export const metadata = {
 - All core features must be complete
 
 **Blocks:**
+
 - None (this is the final epic)
 
 **Technical Dependencies:**
+
 - Vercel account (free tier is sufficient)
 - GitHub repository
 - (Optional) Custom domain
@@ -314,12 +348,12 @@ export const metadata = {
 
 ### Risks
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Mobile layout breaks | Medium | Medium | Test thoroughly on multiple devices |
-| Performance regression | Low | Medium | Monitor Lighthouse scores, optimize proactively |
-| Deployment failures | Low | High | Test build locally before deploying |
-| Browser compatibility issues | Medium | Low | Test on all major browsers |
+| Risk                         | Probability | Impact | Mitigation                                      |
+| ---------------------------- | ----------- | ------ | ----------------------------------------------- |
+| Mobile layout breaks         | Medium      | Medium | Test thoroughly on multiple devices             |
+| Performance regression       | Low         | Medium | Monitor Lighthouse scores, optimize proactively |
+| Deployment failures          | Low         | High   | Test build locally before deploying             |
+| Browser compatibility issues | Medium      | Low    | Test on all major browsers                      |
 
 ### Risk Mitigation Plan
 
@@ -379,6 +413,7 @@ export const metadata = {
 ## Post-Launch Tasks (Not in Epic)
 
 **After deployment, user may want to:**
+
 - Share portfolio URL on LinkedIn
 - Add URL to resume
 - Send to recruiters
@@ -390,6 +425,7 @@ export const metadata = {
 ## Deployment Checklist
 
 **Pre-Deployment:**
+
 - [ ] All features complete and tested
 - [ ] Content finalized and proofread
 - [ ] Links verified
@@ -398,6 +434,7 @@ export const metadata = {
 - [ ] Build succeeds without errors
 
 **During Deployment:**
+
 - [ ] GitHub repo connected to Vercel
 - [ ] Build settings configured
 - [ ] Deployment initiated
@@ -405,6 +442,7 @@ export const metadata = {
 - [ ] Deployment successful
 
 **Post-Deployment:**
+
 - [ ] Site accessible at live URL
 - [ ] All pages load correctly
 - [ ] All links work
@@ -424,6 +462,7 @@ export const metadata = {
 ## 🎉 Completion
 
 Upon completing this epic, the **Personal Portfolio Website for Chasen Wang** will be:
+
 - ✅ Fully functional and feature-complete
 - ✅ Optimized for performance and accessibility
 - ✅ Responsive across all devices
@@ -431,4 +470,3 @@ Upon completing this epic, the **Personal Portfolio Website for Chasen Wang** wi
 - ✅ Ready to support job search in the Australian market
 
 **Congratulations on building an impressive portfolio! 🚀**
-

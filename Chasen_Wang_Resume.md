@@ -1,7 +1,7 @@
 Chasen Wang
 
 0434130614 | chasenwang1026@outlook.com
- | Brisbane, QLD 4109
+| Brisbane, QLD 4109
 
 Summary
 
