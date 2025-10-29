@@ -56,7 +56,7 @@ function ParticleField() {
   const groupRef = useRef<THREE.Group>(null);
 
   const symbols = useMemo(
-    () => ['{', '}', '[', ']', '<', '>', ';', ',', '(', ')', '=', '+'],
+    () => ['{', '}', '[', ']', '<', '>', ';', ',', '(', ')', '=', '+', 'React', 'Vue', 'Angular', 'Svelte', 'Next.js', 'Nuxt.js', 'Tailwind CSS', 'Bootstrap', 'Material UI', 'Chakra UI', 'Tailwind CSS', 'Bootstrap', 'Material UI', 'Chakra UI'],
     []
   );
 
