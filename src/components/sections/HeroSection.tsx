@@ -40,7 +40,7 @@ export function HeroSection() {
         <div className="flex justify-center mt-10">
           <button
             className="run-button group relative px-8 py-3 border-2 border-btn-primary text-btn-primary font-semibold text-base uppercase tracking-wider rounded-lg transition-all duration-200 hover:bg-btn-primary hover:text-black hover:shadow-button hover:-translate-y-0.5 active:translate-y-0"
-            onClick={() => scrollToSection('about', 0)}
+            onClick={() => scrollToSection('about', -90)}
             aria-label="Scroll to About section"
           >
             <span className="flex items-center gap-2">

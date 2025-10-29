@@ -17,8 +17,8 @@ export interface UseScrollSpyOptions {
   
   /**
    * Offset from top of viewport to consider a section active (in pixels)
-   * Accounts for fixed header height
-   * @default 100
+   * Accounts for fixed header height and provides better UX by activating earlier
+   * @default 200
    */
   offset?: number;
   
@@ -64,7 +64,7 @@ export interface UseScrollSpyOptions {
 export function useScrollSpy(options: UseScrollSpyOptions = {}): SectionId {
   const {
     sectionIds = ['hero', 'about', 'skills', 'experience', 'projects'],
-    offset = 100,
+    offset = 200,
     throttleMs = 100,
   } = options;
 

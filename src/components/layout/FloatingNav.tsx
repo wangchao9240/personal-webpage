@@ -71,17 +71,17 @@ const NAV_ITEMS: NavItem[] = [
  * ```
  */
 export function FloatingNav() {
-  const activeSection = useScrollSpy({ offset: 100 });
+  const activeSection = useScrollSpy({ offset: 200 });
 
   const handleClick = (sectionId: SectionId, event: React.MouseEvent) => {
     event.preventDefault();
-    scrollToSection(sectionId, -80);
+    scrollToSection(sectionId, -90);
   };
 
   const handleKeyDown = (sectionId: SectionId, event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      scrollToSection(sectionId, -80);
+      scrollToSection(sectionId, -90);
     }
   };
 
