@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { HeroBackground } from '@/components/hero/HeroBackground';
 import { TerminalWindow } from '@/components/hero/TerminalWindow';
 import { TypewriterText } from '@/components/hero/TypewriterText';
 import { generateSkillsCodeString } from '@/data/skills';
@@ -11,9 +10,11 @@ import { scrollToSection } from '@/lib/utils';
  * Hero Section Component
  *
  * The main hero section of the portfolio featuring:
- * - Animated geometric code background (Three.js)
  * - Terminal window with typewriter effect
  * - Run Code button for navigation
+ *
+ * Note: The animated geometric code background is now a global background
+ * applied at the page level, not specific to this section.
  *
  * Design: Code Aesthetics - Dark theme with terminal aesthetic
  */
@@ -26,9 +27,6 @@ export function HeroSection() {
       className="hero-section relative min-h-screen flex items-center justify-center px-4"
       aria-label="Hero section - Developer introduction"
     >
-      {/* Animated Background Layer */}
-      <HeroBackground />
-
       {/* Content Layer */}
       <div className="hero-content relative z-10 max-w-3xl w-full">
         {/* Terminal Window with Typewriter Effect */}
