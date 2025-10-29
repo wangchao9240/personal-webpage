@@ -1,0 +1,28 @@
+# Project Images Directory
+
+This directory should contain screenshots/concept images for the 3 projects:
+
+1. **chatgpt-timeline.png**
+   - Screenshot or concept diagram of ChatGPT Timeline Navigator
+   - Aspect ratio: 16:9
+   - Max size: 300KB
+   - Dimensions: ~1200px width recommended
+
+2. **collaboration-platform.png**
+   - Screenshot of Real-time Collaboration Platform
+   - Aspect ratio: 16:9
+   - Max size: 300KB
+   - Dimensions: ~1200px width recommended
+
+3. **meme-alchemist.png**
+   - Screenshot of MEME Alchemist
+   - Aspect ratio: 16:9
+   - Max size: 300KB
+   - Dimensions: ~1200px width recommended
+
+**Image Optimization Tips:**
+- Use TinyPNG or ImageOptim to compress
+- Ensure good quality but reasonable file size
+- Maintain 16:9 aspect ratio for consistency
+- Use PNG for screenshots with text, JPEG for photos
+

@@ -2,6 +2,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { SkillsSection } from '@/components/sections/SkillsSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
+import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { Header } from '@/components/layout/Header';
 import { FloatingNav } from '@/components/layout/FloatingNav';
 import { HeroBackground } from '@/components/hero/HeroBackground';
@@ -35,17 +36,8 @@ export default function Home() {
           {/* Experience Section */}
           <ExperienceSection />
 
-          {/* Projects Section - Placeholder for Epic 5 */}
-          <section id="projects" className="min-h-screen">
-            <div className="rounded-xl border border-dashed border-[#4b5563] p-8">
-              <h2 className="text-4xl font-bold text-[#f3f4f6]">Section: Projects</h2>
-              <p className="mt-4 text-[#9ca3af]">
-                Content placeholder for the &ldquo;Projects&rdquo; section. The combination of the fixed 
-                header and floating navigation provides a comprehensive yet minimal way to 
-                navigate the portfolio.
-              </p>
-            </div>
-          </section>
+          {/* Projects Section (Epic 5) */}
+          <ProjectsSection />
         </div>
       </main>
     </>
