@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { HeroBackground } from '@/components/hero/HeroBackground';
 import { TerminalWindow } from '@/components/hero/TerminalWindow';
 import { TypewriterText } from '@/components/hero/TypewriterText';
 import { generateSkillsCodeString } from '@/data/skills';
@@ -8,8 +9,10 @@ import { generateSkillsCodeString } from '@/data/skills';
 /**
  * Hero Section Component
  *
- * The main hero section of the portfolio featuring a terminal window
- * with typewriter effect displaying technical skills.
+ * The main hero section of the portfolio featuring:
+ * - Animated geometric code background (Three.js)
+ * - Terminal window with typewriter effect
+ * - Run Code button for navigation
  *
  * Design: Code Aesthetics - Dark theme with terminal aesthetic
  */
@@ -19,10 +22,14 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-section min-h-screen flex items-center justify-center px-4"
+      className="hero-section relative min-h-screen flex items-center justify-center px-4"
       aria-label="Hero section - Developer introduction"
     >
-      <div className="hero-content max-w-3xl w-full">
+      {/* Animated Background Layer */}
+      <HeroBackground />
+
+      {/* Content Layer */}
+      <div className="hero-content relative z-10 max-w-3xl w-full">
         {/* Terminal Window with Typewriter Effect */}
         <TerminalWindow>
           <TypewriterText text={codeString} speed={50} delay={300} />
