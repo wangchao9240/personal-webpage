@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://your-domain.vercel.app'), // TODO: Update with actual Vercel URL after deployment
   title: 'Chasen Wang - Frontend Developer Portfolio',
   description:
     'Creative problem solver with 6+ years of frontend development experience. Specializing in React, Vue, and Next.js. View my projects and experience.',
