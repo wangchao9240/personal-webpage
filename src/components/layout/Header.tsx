@@ -7,8 +7,8 @@ import React from 'react';
  */
 const CONTACT_INFO = {
   email: 'chasenwang1026@outlook.com',
-  linkedin: 'https://www.linkedin.com/in/your-profile', // TODO: Update with actual LinkedIn URL
-  github: 'https://github.com/your-username', // TODO: Update with actual GitHub URL
+  linkedin: 'https://www.linkedin.com/in/chasen-wang-b6621b318/',
+  github: 'https://github.com/wangchao9240',
 };
 
 /**

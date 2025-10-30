@@ -25,7 +25,7 @@ export const projects: Project[] = [
     techStack: ['React', 'TypeScript', 'Chrome Extension API'],
     imagePath: '/images/projects/chatgpt-timeline.svg', // TODO: Replace with .png screenshot
     // Note: No liveUrl - browser extension (GitHub only)
-    githubUrl: 'https://github.com/yourusername/chatgpt-timeline-navigator', // TODO: Update with actual URL
+    githubUrl: 'https://github.com/wangchao9240/ChatGPT-Timeline-Navigator',
   },
   {
     id: 'collaboration-platform',
@@ -33,8 +33,8 @@ export const projects: Project[] = [
     description: 'Web application featuring real-time whiteboard and document collaboration',
     techStack: ['Next.js', 'WebSocket', 'Canvas API', 'TypeScript'],
     imagePath: '/images/projects/collaboration-platform.svg', // TODO: Replace with .png screenshot
-    liveUrl: 'https://your-collab-platform.vercel.app', // TODO: Update with actual URL
-    githubUrl: 'https://github.com/yourusername/collaboration-platform', // TODO: Update with actual URL
+    liveUrl: 'https://real-time-collaboration-eta.vercel.app/',
+    githubUrl: 'https://github.com/wangchao9240/real-time-collaboration',
   },
   {
     id: 'meme-alchemist',
@@ -42,8 +42,8 @@ export const projects: Project[] = [
     description: 'AI-powered meme generator combining trending memes with factual information',
     techStack: ['React', 'Node.js', 'OpenAI API', 'Image Processing'],
     imagePath: '/images/projects/meme-alchemist.svg', // TODO: Replace with .png screenshot
-    liveUrl: 'https://meme-alchemist.vercel.app', // TODO: Update with actual URL
-    githubUrl: 'https://github.com/yourusername/meme-alchemist', // TODO: Update with actual URL
+    liveUrl: 'https://meme-alchemist-web.pages.dev/',
+    githubUrl: 'https://github.com/wangchao9240/meme-alchemist',
   },
 ];
 
