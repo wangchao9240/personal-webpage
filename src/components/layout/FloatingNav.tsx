@@ -87,11 +87,11 @@ export function FloatingNav() {
 
   return (
     <nav
-      className="fixed top-1/2 right-8 z-50 -translate-y-1/2"
+      className="fixed top-1/2 right-4 sm:right-6 md:right-8 z-50 -translate-y-1/2"
       aria-label="Page section navigation"
       role="navigation"
     >
-      <ul className="flex flex-col items-center gap-4">
+      <ul className="flex flex-col items-center gap-3 sm:gap-4">
         {NAV_ITEMS.map((item) => {
           const isActive = activeSection === item.id;
 
@@ -107,8 +107,8 @@ export function FloatingNav() {
                   block rounded-full transition-all duration-300 ease-out
                   ${
                     isActive
-                      ? 'h-3.5 w-3.5 bg-[#00d9ff] opacity-100 shadow-[0_0_8px_rgba(0,217,255,0.5)]'
-                      : 'h-2.5 w-2.5 bg-[#6b7280] opacity-60 hover:h-3 hover:w-3 hover:bg-[#9ca3af] hover:opacity-90'
+                      ? 'h-3 w-3 sm:h-3.5 sm:w-3.5 bg-[#00d9ff] opacity-100 shadow-[0_0_8px_rgba(0,217,255,0.5)]'
+                      : 'h-2 w-2 sm:h-2.5 sm:w-2.5 bg-[#6b7280] opacity-60 hover:h-2.5 hover:w-2.5 sm:hover:h-3 sm:hover:w-3 hover:bg-[#9ca3af] hover:opacity-90'
                   }
                   focus:outline-none focus:ring-2 focus:ring-[#00d9ff] focus:ring-offset-2 focus:ring-offset-[#0a0e1a]
                 `}

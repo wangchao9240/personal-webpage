@@ -71,7 +71,7 @@ export function SectionWrapper({
       {showTitle && (
         <motion.h2
           id={`${id}-title`}
-          className={`mb-6 font-bold tracking-tight text-[#f3f4f6] ${titleSize}`}
+          className={`mb-4 sm:mb-6 font-bold tracking-tight text-[#f3f4f6] text-2xl sm:${titleSize}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}

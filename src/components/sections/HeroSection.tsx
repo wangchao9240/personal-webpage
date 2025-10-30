@@ -24,20 +24,20 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-section relative min-h-screen flex items-center justify-center px-4"
+      className="hero-section relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
       aria-label="Hero section - Developer introduction"
     >
       {/* Content Layer */}
-      <div className="hero-content relative z-10 max-w-3xl w-full">
+      <div className="hero-content relative z-10 w-full max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
         {/* Terminal Window with Typewriter Effect */}
         <TerminalWindow>
           <TypewriterText text={codeString} speed={50} delay={300} />
         </TerminalWindow>
 
         {/* Run Button - Scrolls to About section */}
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-6 sm:mt-10">
           <button
-            className="run-button group relative px-8 py-3 border-2 border-btn-primary text-btn-primary font-semibold text-base uppercase tracking-wider rounded-lg transition-all duration-200 hover:bg-btn-primary hover:text-black hover:shadow-button hover:-translate-y-0.5 active:translate-y-0"
+            className="run-button group relative px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-btn-primary text-btn-primary font-semibold text-sm sm:text-base uppercase tracking-wider rounded-lg transition-all duration-200 hover:bg-btn-primary hover:text-black hover:shadow-button hover:-translate-y-0.5 active:translate-y-0"
             onClick={() => scrollToSection('about', -90)}
             aria-label="Scroll to About section"
           >

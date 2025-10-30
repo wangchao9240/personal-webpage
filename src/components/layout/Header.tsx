@@ -40,15 +40,15 @@ export function Header() {
     <header
       className="
         fixed top-0 left-0 right-0 z-50
-        flex h-[70px] w-full items-center justify-end
+        flex h-[60px] sm:h-[70px] w-full items-center justify-end
         border-b border-[rgba(48,54,61,0.3)]
         bg-[rgba(10,14,26,0.85)]
-        px-8 shadow-lg backdrop-blur-[10px]
+        px-4 sm:px-6 md:px-8 shadow-lg backdrop-blur-[10px]
       "
       role="banner"
       aria-label="Site header with contact information"
     >
-      <div className="flex items-center gap-5" aria-label="Contact links">
+      <div className="flex items-center gap-3 sm:gap-4 md:gap-5" aria-label="Contact links">
         {/* Email Icon */}
         <a
           href={`mailto:${CONTACT_INFO.email}`}
@@ -61,7 +61,7 @@ export function Header() {
         >
           {/* Material Icons - Mail */}
           <svg
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export function Header() {
           "
         >
           <svg
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -106,7 +106,7 @@ export function Header() {
           "
         >
           <svg
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"

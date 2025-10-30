@@ -25,8 +25,8 @@ export default function Home() {
       <HeroSection />
 
       {/* Main Content - Content Sections (Epic 4) */}
-      <main className="container mx-auto max-w-6xl px-8 py-32">
-        <div className="flex flex-col gap-16">
+      <main className="container mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-16 sm:py-24 md:py-32">
+        <div className="flex flex-col gap-12 sm:gap-14 md:gap-16">
           {/* About Section */}
           <AboutSection />
 

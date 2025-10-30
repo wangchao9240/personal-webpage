@@ -64,7 +64,7 @@ export function TerminalWindow({
       </div>
 
       {/* Terminal Content */}
-      <div className="terminal-content p-6 font-mono text-terminal-green text-lg leading-relaxed">
+      <div className="terminal-content p-4 sm:p-6 font-mono text-terminal-green text-base sm:text-lg leading-relaxed">
         {children}
       </div>
     </div>
