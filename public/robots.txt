@@ -1,0 +1,9 @@
+# Robots.txt for Chasen Wang's Portfolio
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location (update with actual domain after deployment)
+# Sitemap: https://your-domain.com/sitemap.xml
+
