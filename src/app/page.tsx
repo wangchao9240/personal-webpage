@@ -3,23 +3,16 @@ import { AboutSection } from '@/components/sections/AboutSection';
 import { SkillsSection } from '@/components/sections/SkillsSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
-import { Header } from '@/components/layout/Header';
-import { FloatingNav } from '@/components/layout/FloatingNav';
+import { ClientLayout } from '@/components/layout/ClientLayout';
 import { HeroBackground } from '@/components/hero/HeroBackground';
 
 export default function Home() {
   return (
-    <>
+    <ClientLayout>
       {/* Global Animated Background - Fixed to entire page */}
       <div className="fixed inset-0 w-full h-full -z-10" aria-hidden="true">
         <HeroBackground />
       </div>
-
-      {/* Fixed Header with Contact Icons */}
-      <Header />
-
-      {/* Floating Navigation Dots */}
-      <FloatingNav />
 
       {/* Hero Section - Full Screen (Epic 2) */}
       <HeroSection />
@@ -40,6 +33,6 @@ export default function Home() {
           <ProjectsSection />
         </div>
       </main>
-    </>
+    </ClientLayout>
   );
 }

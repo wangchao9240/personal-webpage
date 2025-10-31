@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Aesthetics - Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Fira+Code:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .blinking-cursor {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { color: transparent; }
+            50% { color: #0EA5E9; }
+        }
+        .floating-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .floating-symbols span {
+            position: absolute;
+            font-size: 20px;
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06d0f9",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f1f23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-white font-display">
+<div class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
+<div class="floating-symbols">
+<span style="left: 10%; animation-duration: 22s; animation-delay: -2s; color: rgba(14, 165, 233, 0.05);">{ }</span>
+<span style="left: 20%; animation-duration: 18s; animation-delay: -10s; color: rgba(139, 92, 246, 0.05);">[ ]</span>
+<span style="left: 30%; animation-duration: 25s; animation-delay: -5s; color: rgba(16, 185, 129, 0.05);">&lt;/&gt;</span>
+<span style="left: 40%; animation-duration: 15s; animation-delay: -15s; color: rgba(14, 165, 233, 0.05);">( )</span>
+<span style="left: 50%; animation-duration: 28s; animation-delay: -8s; color: rgba(139, 92, 246, 0.05);">;</span>
+<span style="left: 60%; animation-duration: 19s; animation-delay: -12s; color: rgba(16, 185, 129, 0.05);">:</span>
+<span style="left: 70%; animation-duration: 21s; animation-delay: -3s; color: rgba(14, 165, 233, 0.05);">{ }</span>
+<span style="left: 80%; animation-duration: 24s; animation-delay: -18s; color: rgba(139, 92, 246, 0.05);">=&gt;</span>
+<span style="left: 90%; animation-duration: 17s; animation-delay: -7s; color: rgba(16, 185, 129, 0.05);">//</span>
+<span style="left: 15%; animation-duration: 26s; animation-delay: -14s; color: rgba(14, 165, 233, 0.05);">|</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-12 p-4">
+<div class="w-full max-w-[700px] rounded-xl bg-[#F1F5F9] shadow-2xl shadow-slate-200">
+<div class="flex h-10 items-center gap-2 rounded-t-xl bg-[#E2E8F0] px-4">
+<div class="flex items-center gap-2">
+<span class="h-3 w-3 rounded-full bg-[#ff5f56]"></span>
+<span class="h-3 w-3 rounded-full bg-[#ffbd2e]"></span>
+<span class="h-3 w-3 rounded-full bg-[#27c93f]"></span>
+</div>
+<p class="flex-1 text-center text-sm text-slate-500">Terminal</p>
+</div>
+<div class="p-6">
+<pre class="font-mono text-[18px] leading-[1.6] text-[#0F172A]"><code class="language-javascript"><span style="color: #7C3AED;">const</span> skills = {
+  <span style="color: #0EA5E9;">frontend</span>: [<span style="color: #059669;">'React'</span>, <span style="color: #059669;">'Vue'</span>, <span style="color: #059669;">'TypeScript'</span>, <span style="color: #059669;">'HTML5'</span>, <span style="color: #059669;">'CSS3'</span>, <span style="color: #059669;">'JavaScript'</span>],
+  <span style="color: #0EA5E9;">backend</span>: [<span style="color: #059669;">'Node.js'</span>, <span style="color: #059669;">'Express'</span>],
+  <span style="color: #0EA5E9;">tools</span>: [<span style="color: #059669;">'Git'</span>, <span style="color: #059669;">'CMS management'</span>, <span style="color: #059669;">'SSR'</span>]
+}<span class="blinking-cursor">█</span></code></pre>
+</div>
+</div>
+<button class="flex h-[50px] w-[180px] cursor-pointer items-center justify-center rounded-lg bg-[#0EA5E9] text-center text-base font-semibold uppercase text-white shadow-[0_4px_12px_rgba(14,165,233,0.3)] transition-all duration-300 hover:bg-[#0284C7] hover:-translate-y-1">
+<span class="truncate">▶ RUN CODE</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,34 +1,58 @@
 @import 'tailwindcss';
 
+@variant dark (&:is(.dark *));
+
+/* Light Theme (Default) */
 :root {
-  /* Hero Section Colors */
-  --bg-hero: #0a0e1a;
-  --bg-terminal: #0d1117;
-  --bg-terminal-header: #161b22;
-  --border-terminal: #30363d;
+  /* Background Colors */
+  --bg-hero: #F8FAFC;
+  --bg-terminal: #F1F5F9;
+  --bg-terminal-header: #E2E8F0;
+  --bg-card: #FFFFFF;
+  --bg-hover: #F0F9FF;
+  --border-terminal: #CBD5E1;
   
-  /* Terminal Text Colors */
-  --text-terminal-green: #00ff41;
-  --text-terminal-muted: #8b949e;
-  --text-keyword: #ff79c6;
-  --text-string: #f1fa8c;
-  --text-property: #50fa7b;
-  --text-secondary: #8b949e;
+  /* Text Colors */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-terminal-green: #0F172A;
+  --text-terminal-muted: #64748B;
+  --text-keyword: #7C3AED;
+  --text-string: #059669;
+  --text-property: #0EA5E9;
+  
+  /* Accent Colors */
+  --accent-primary: #0EA5E9;
+  --accent-secondary: #8B5CF6;
+  --accent-success: #10B981;
+  --accent-warning: #F59E0B;
   
   /* Geometric Background Colors */
-  --geo-primary: #00d9ff;
-  --geo-secondary: #bd93f9;
-  --geo-tertiary: #50fa7b;
+  --geo-primary: rgba(14, 165, 233, 0.05);
+  --geo-secondary: rgba(139, 92, 246, 0.05);
+  --geo-tertiary: rgba(16, 185, 129, 0.05);
   
-  /* UI Element Colors */
-  --btn-primary: #00d9ff;
-  --btn-hover: #00b8d9;
-  --cursor-color: #00ff41;
+  /* Button Colors */
+  --btn-primary: #0EA5E9;
+  --btn-hover: #0284C7;
+  --cursor-color: #0EA5E9;
+  
+  /* Border Colors */
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-focus: #0EA5E9;
   
   /* Terminal Header Dots */
   --dot-red: #ff5f56;
   --dot-yellow: #ffbd2e;
   --dot-green: #27c93f;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-terminal: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 4px 12px rgba(14, 165, 233, 0.3);
   
   /* Spacing */
   --space-xs: 8px;
@@ -36,8 +60,52 @@
   --space-md: 24px;
   --space-lg: 40px;
   --space-xl: 60px;
+}
+
+/* Dark Theme */
+.dark {
+  /* Background Colors */
+  --bg-hero: #0a0e1a;
+  --bg-terminal: #0d1117;
+  --bg-terminal-header: #161b22;
+  --bg-card: #0d1117;
+  --bg-hover: rgba(0, 217, 255, 0.1);
+  --border-terminal: #30363d;
+  
+  /* Text Colors */
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-terminal-green: #00ff41;
+  --text-terminal-muted: #8b949e;
+  --text-keyword: #ff79c6;
+  --text-string: #f1fa8c;
+  --text-property: #50fa7b;
+  
+  /* Accent Colors */
+  --accent-primary: #00d9ff;
+  --accent-secondary: #bd93f9;
+  --accent-success: #50fa7b;
+  --accent-warning: #ffbd2e;
+  
+  /* Geometric Background Colors */
+  --geo-primary: #00d9ff;
+  --geo-secondary: #bd93f9;
+  --geo-tertiary: #50fa7b;
+  
+  /* Button Colors */
+  --btn-primary: #00d9ff;
+  --btn-hover: #00b8d9;
+  --cursor-color: #00ff41;
+  
+  /* Border Colors */
+  --border-light: #30363d;
+  --border-medium: #484f58;
+  --border-focus: #00d9ff;
   
   /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
   --shadow-terminal: 0 20px 60px rgba(0, 0, 0, 0.5);
   --shadow-button: 0 8px 20px rgba(0, 217, 255, 0.3);
 }
@@ -79,8 +147,9 @@
 
 body {
   background: var(--bg-hero);
-  color: var(--text-terminal-green);
+  color: var(--text-primary);
   font-family: var(--font-mono), 'Consolas', 'Monaco', monospace;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Cursor Blink Animation */

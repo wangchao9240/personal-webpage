@@ -4,6 +4,7 @@ import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 import * as THREE from 'three';
+import { useTheme } from '@/contexts/ThemeContext';
 
 /**
  * Individual floating code symbol
@@ -13,11 +14,13 @@ function FloatingSymbol({
   position,
   color,
   speed,
+  isDark,
 }: {
   symbol: string;
   position: [number, number, number];
   color: string;
   speed: number;
+  isDark: boolean;
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const initialY = position[1];
@@ -40,8 +43,8 @@ function FloatingSymbol({
         color={color}
         anchorX="center"
         anchorY="middle"
-        outlineWidth={0.02}
-        outlineColor="#000000"
+        outlineWidth={isDark ? 0.02 : 0}
+        outlineColor={isDark ? "#000000" : "transparent"}
       >
         {symbol}
       </Text>
@@ -52,7 +55,7 @@ function FloatingSymbol({
 /**
  * Rotating particle system with code symbols
  */
-function ParticleField() {
+function ParticleField({ isDark }: { isDark: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
 
   const symbols = useMemo(
@@ -92,7 +95,7 @@ function ParticleField() {
   return (
     <group ref={groupRef}>
       {particles.map((particle, i) => (
-        <FloatingSymbol key={i} {...particle} />
+        <FloatingSymbol key={i} {...particle} isDark={isDark} />
       ))}
     </group>
   );
@@ -112,13 +115,16 @@ function ParticleField() {
  * - Performance optimized with useMemo
  */
 export function GeometricBackground() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <div
       className="absolute inset-0 -z-10 overflow-hidden"
       aria-hidden="true"
     >
-      {/* Gradient backdrop */}
-      <div className="absolute inset-0 bg-gradient-to-br from-bg-hero via-[#0a0e1a] to-[#050810]" />
+      {/* Gradient backdrop - White for light mode, dark gradient for dark mode */}
+      <div className="absolute inset-0 bg-white dark:bg-gradient-to-br dark:from-[#0a0e1a] dark:via-[#0a0e1a] dark:to-[#050810]" />
 
       {/* Three.js Canvas */}
       <Canvas
@@ -131,7 +137,7 @@ export function GeometricBackground() {
         dpr={[1, 1.5]} // Limit pixel ratio for performance
       >
         <ambientLight intensity={0.5} />
-        <ParticleField />
+        <ParticleField isDark={isDark} />
       </Canvas>
     </div>
   );

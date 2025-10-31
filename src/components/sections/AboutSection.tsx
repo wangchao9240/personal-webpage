@@ -33,7 +33,8 @@ export function AboutSection() {
   return (
     <SectionWrapper id="about" title="About">
       <Card>
-        <p className="font-mono text-lg leading-loose tracking-wide text-[#9ca3af]">
+        <p className="font-mono text-lg leading-loose tracking-wide
+          text-[#475569] dark:text-[#9ca3af]">
           Creative problem solver with 6+ years of front-end development experience. 
           I specialize in transforming complex requirements into elegant, user-friendly 
           web applications. Proficient in React, Vue, and modern JavaScript ecosystem, 

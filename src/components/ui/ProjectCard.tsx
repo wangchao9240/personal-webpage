@@ -59,7 +59,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.article
-      className="group relative flex flex-col overflow-hidden rounded-lg bg-[#0d1117] border border-[#30363d] shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-[#00d9ff] hover:shadow-[0_12px_24px_rgba(0,217,255,0.2)]"
+      className="group relative flex flex-col overflow-hidden rounded-lg transition-all duration-300 ease-in-out hover:-translate-y-2
+        bg-white border border-[#E2E8F0] shadow-[0_1px_3px_rgba(0,0,0,0.1)]
+        hover:border-[#0EA5E9] hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]
+        dark:bg-[#0d1117] dark:border-[#30363d] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]
+        dark:hover:border-[#00d9ff] dark:hover:shadow-[0_12px_24px_rgba(0,217,255,0.2)]"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
@@ -69,7 +73,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       aria-label={`${project.name} project card`}
     >
       {/* Project Image */}
-      <div className="relative w-full aspect-video bg-[#161b22]">
+      <div className="relative w-full aspect-video 
+        bg-slate-100 dark:bg-[#161b22]">
         <Image
           src={project.imagePath}
           alt={`${project.name} - ${project.description}`}
@@ -83,12 +88,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Content Section */}
       <div className="p-6 flex flex-col flex-grow">
         {/* Project Name */}
-        <h3 className="text-[#f3f4f6] text-2xl font-bold leading-normal mb-3">
+        <h3 className="text-2xl font-bold leading-normal mb-3
+          text-slate-900 dark:text-[#f3f4f6]">
           {project.name}
         </h3>
 
         {/* Description */}
-        <p className="text-[#9ca3af] text-base font-normal leading-[1.6] mb-4">
+        <p className="text-base font-normal leading-[1.6] mb-4
+          text-slate-600 dark:text-[#9ca3af]">
           {project.description}
         </p>
 
@@ -101,7 +108,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             ) : (
               <span
                 key={tech}
-                className="inline-flex items-center rounded bg-[#00d9ff]/10 border border-[#00d9ff]/30 px-2.5 py-1.5 text-xs font-medium text-[#00d9ff]"
+                className="inline-flex items-center rounded px-2.5 py-1.5 text-xs font-medium
+                  bg-[rgba(14,165,233,0.1)] border border-[rgba(14,165,233,0.3)] text-sky-800
+                  dark:bg-[#00d9ff]/10 dark:border-[#00d9ff]/30 dark:text-[#00d9ff]"
               >
                 {tech}
               </span>
@@ -112,7 +121,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Action Buttons Overlay (Hidden by default, shown on hover) */}
       <motion.div
-        className="absolute inset-0 flex items-end bg-gradient-to-t from-[rgba(13,17,23,0.95)] via-[rgba(13,17,23,0.8)] to-transparent pointer-events-none"
+        className="absolute inset-0 flex items-end pointer-events-none
+          bg-gradient-to-t from-[rgba(255,255,255,0.95)] via-[rgba(255,255,255,0.8)] to-transparent
+          dark:from-[rgba(13,17,23,0.95)] dark:via-[rgba(13,17,23,0.8)] dark:to-transparent"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -124,7 +135,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-w-[84px] items-center justify-center gap-2 rounded h-auto px-5 py-2.5 bg-[#00d9ff] text-[#0a0e1a] text-sm font-semibold leading-normal tracking-wide transition-all duration-200 hover:bg-[#00b8d9] hover:scale-105"
+              className="flex min-w-[84px] items-center justify-center gap-2 rounded h-auto px-5 py-2.5 text-sm font-semibold leading-normal tracking-wide transition-all duration-200 hover:scale-105
+                bg-[#0EA5E9] text-white hover:bg-[#0284C7]
+                dark:bg-[#00d9ff] dark:text-[#0a0e1a] dark:hover:bg-[#00b8d9]"
               aria-label={`View live demo of ${project.name} (opens in new tab)`}
             >
               <FaExternalLinkAlt className="text-base" aria-hidden="true" />
@@ -137,7 +150,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-w-[84px] items-center justify-center gap-2 rounded h-auto px-5 py-2.5 bg-[#30363d] text-[#f3f4f6] text-sm font-semibold leading-normal tracking-wide transition-all duration-200 hover:bg-[#484f58] hover:scale-105"
+            className="flex min-w-[84px] items-center justify-center gap-2 rounded h-auto px-5 py-2.5 text-sm font-semibold leading-normal tracking-wide transition-all duration-200 hover:scale-105
+              bg-white text-[#0EA5E9] border-2 border-[#0EA5E9]
+              dark:bg-[#30363d] dark:text-[#f3f4f6] dark:border-transparent dark:hover:bg-[#484f58]"
             aria-label={`View ${project.name} on GitHub (opens in new tab)`}
           >
             <FaGithub className="text-base" aria-hidden="true" />

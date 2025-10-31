@@ -37,7 +37,12 @@ export function HeroSection() {
         {/* Run Button - Scrolls to About section */}
         <div className="flex justify-center mt-6 sm:mt-10">
           <button
-            className="run-button group relative px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-btn-primary text-btn-primary font-semibold text-sm sm:text-base uppercase tracking-wider rounded-lg transition-all duration-200 hover:bg-btn-primary hover:text-black hover:shadow-button hover:-translate-y-0.5 active:translate-y-0"
+            className="run-button group relative px-6 py-2.5 sm:px-8 sm:py-3 font-semibold text-sm sm:text-base uppercase tracking-wider rounded-lg transition-all duration-300
+              bg-[#0EA5E9] text-white shadow-[0_4px_12px_rgba(14,165,233,0.3)]
+              dark:border-2 dark:border-[#00d9ff] dark:bg-transparent dark:text-[#00d9ff]
+              hover:bg-[#0284C7] hover:-translate-y-1
+              dark:hover:bg-[#00d9ff] dark:hover:text-black
+              active:translate-y-0"
             onClick={() => scrollToSection('about', -90)}
             aria-label="Scroll to About section"
           >

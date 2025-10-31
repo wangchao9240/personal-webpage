@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 /**
  * Contact information for the header
@@ -40,23 +41,33 @@ export function Header() {
     <header
       className="
         fixed top-0 left-0 right-0 z-50
-        flex h-[60px] sm:h-[70px] w-full items-center justify-end
-        border-b border-[rgba(48,54,61,0.3)]
-        bg-[rgba(10,14,26,0.85)]
-        px-4 sm:px-6 md:px-8 shadow-lg backdrop-blur-[10px]
+        flex h-[60px] sm:h-[70px] w-full items-center justify-between
+        border-b transition-colors duration-300
+        border-slate-200 bg-white/85
+        dark:border-slate-800 dark:bg-slate-900/85
+        px-4 sm:px-6 md:px-8 shadow-sm backdrop-blur-[10px]
       "
       role="banner"
-      aria-label="Site header with contact information"
+      aria-label="Site header with theme toggle and contact information"
     >
+      {/* Left side: Theme Toggle */}
+      <div className="flex items-center">
+        <ThemeToggle />
+      </div>
+
+      {/* Right side: Contact Links */}
       <div className="flex items-center gap-3 sm:gap-4 md:gap-5" aria-label="Contact links">
         {/* Email Icon */}
         <a
           href={`mailto:${CONTACT_INFO.email}`}
           aria-label="Send me an email"
           className="
-            text-[#d1d5db] opacity-90 transition-all duration-200
-            hover:scale-110 hover:text-[#00d9ff] hover:opacity-100
-            focus:outline-none focus:ring-2 focus:ring-[#00d9ff] focus:ring-offset-2 focus:ring-offset-[#0a0e1a]
+            transition-all duration-200
+            text-slate-600 hover:text-[#0EA5E9]
+            dark:text-slate-300 dark:hover:text-cyan-400
+            hover:scale-110
+            focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:ring-offset-2
+            focus:ring-offset-white dark:focus:ring-offset-slate-900
           "
         >
           {/* Material Icons - Mail */}
@@ -78,9 +89,12 @@ export function Header() {
           rel="noopener noreferrer"
           aria-label="View my LinkedIn profile"
           className="
-            text-[#d1d5db] opacity-90 transition-all duration-200
-            hover:scale-110 hover:text-[#00d9ff] hover:opacity-100
-            focus:outline-none focus:ring-2 focus:ring-[#00d9ff] focus:ring-offset-2 focus:ring-offset-[#0a0e1a]
+            transition-all duration-200
+            text-slate-600 hover:text-[#0EA5E9]
+            dark:text-slate-300 dark:hover:text-cyan-400
+            hover:scale-110
+            focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:ring-offset-2
+            focus:ring-offset-white dark:focus:ring-offset-slate-900
           "
         >
           <svg
@@ -100,9 +114,12 @@ export function Header() {
           rel="noopener noreferrer"
           aria-label="View my GitHub profile"
           className="
-            text-[#d1d5db] opacity-90 transition-all duration-200
-            hover:scale-110 hover:text-[#00d9ff] hover:opacity-100
-            focus:outline-none focus:ring-2 focus:ring-[#00d9ff] focus:ring-offset-2 focus:ring-offset-[#0a0e1a]
+            transition-all duration-200
+            text-slate-600 hover:text-[#0EA5E9]
+            dark:text-slate-300 dark:hover:text-cyan-400
+            hover:scale-110
+            focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:ring-offset-2
+            focus:ring-offset-white dark:focus:ring-offset-slate-900
           "
         >
           <svg

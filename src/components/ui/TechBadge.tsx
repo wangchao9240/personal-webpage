@@ -48,10 +48,12 @@ export function TechBadge({
   className = '' 
 }: TechBadgeProps) {
   const baseClasses = 
-    'inline-flex items-center gap-2 rounded-md border border-[#00d9ff]/30 bg-[#00d9ff]/10 px-3 py-2 text-sm font-medium text-[#00d9ff] transition-all duration-200';
+    `inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-all duration-200
+    bg-[rgba(14,165,233,0.1)] border-[rgba(14,165,233,0.3)] text-sky-800
+    dark:bg-[#00d9ff]/10 dark:border-[#00d9ff]/30 dark:text-[#00d9ff]`;
   
   const hoverClasses = 
-    'hover:bg-[#00d9ff]/15 hover:border-[#00d9ff]/50';
+    'hover:bg-[rgba(14,165,233,0.15)] hover:border-[rgba(14,165,233,0.5)] dark:hover:bg-[#00d9ff]/15 dark:hover:border-[#00d9ff]/50';
 
   const interactiveClasses = onClick 
     ? 'cursor-pointer active:scale-95' 

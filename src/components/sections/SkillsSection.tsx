@@ -10,7 +10,8 @@ import { skillsWithIcons } from '@/data/skills';
  * Category title styling (consistent across all categories)
  */
 const CategoryTitle = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="mb-4 text-xl font-semibold text-[#00d9ff]">
+  <h3 className="mb-4 text-xl font-semibold
+    text-[#0EA5E9] dark:text-[#00d9ff]">
     {children}
   </h3>
 );

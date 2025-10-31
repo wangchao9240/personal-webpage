@@ -51,10 +51,12 @@ export function Card({
   hover = true,
   animate = false 
 }: CardProps) {
-  const baseClasses = 'w-full rounded-xl border border-[#30363d] bg-[#0d1117] p-6 shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300';
+  const baseClasses = `w-full rounded-xl border p-6 transition-all duration-300
+    border-[#E2E8F0] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)]
+    dark:border-[#30363d] dark:bg-[#0d1117] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]`;
   
   const hoverClasses = hover 
-    ? 'hover:border-[#00d9ff]/50 hover:shadow-[0_8px_24px_rgba(6,208,249,0.1)]' 
+    ? 'hover:border-[#0EA5E9] hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)] dark:hover:border-[#00d9ff]/50 dark:hover:shadow-[0_8px_24px_rgba(6,208,249,0.1)]' 
     : '';
 
   const combinedClasses = `${baseClasses} ${hoverClasses} ${className}`.trim();

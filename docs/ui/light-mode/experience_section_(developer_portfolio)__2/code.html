@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Experience Section</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        .timeline-dot-shadow {
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.2);
+        }
+    </style>
+<script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "sky-blue": "#0EA5E9",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.75rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-white">
+<main class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+<div class="w-full max-w-4xl px-4 py-10">
+<div class="mb-12">
+<h1 class="text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">Experience</h1>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-4 top-2 h-full w-0.5 bg-[#E2E8F0]"></div>
+<div class="space-y-6">
+<div class="relative">
+<div class="absolute -left-12 top-1.5 flex h-8 w-8 items-center justify-center">
+<div class="h-3 w-3 rounded-full border-2 border-sky-blue timeline-dot-shadow"></div>
+</div>
+<div class="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-300 hover:border-sky-blue hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+<h3 class="text-lg font-bold text-[#0F172A]">Innovate Corp</h3>
+<p class="text-base font-semibold text-[#475569]">Senior Frontend Developer</p>
+<p class="mb-4 text-sm text-[#64748B]">2022 - Present · San Francisco, CA</p>
+<ul class="list-disc space-y-2 pl-5 text-base text-[#475569]">
+<li>Led the development of a new design system, improving UI consistency and reducing development time by 30%.</li>
+<li>Mentored junior developers and conducted code reviews to maintain high-quality standards across the team.</li>
+<li>Optimized application performance, resulting in a 50% improvement in load times and a better user experience.</li>
+</ul>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-12 top-1.5 flex h-8 w-8 items-center justify-center">
+<div class="h-3 w-3 rounded-full border-2 border-sky-blue timeline-dot-shadow"></div>
+</div>
+<div class="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-300 hover:border-sky-blue hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+<h3 class="text-lg font-bold text-[#0F172A]">Tech Solutions Inc.</h3>
+<p class="text-base font-semibold text-[#475569]">Frontend Developer</p>
+<p class="mb-4 text-sm text-[#64748B]">2020 - 2022 · Remote</p>
+<ul class="list-disc space-y-2 pl-5 text-base text-[#475569]">
+<li>Developed and maintained responsive user interfaces for client-facing web applications using React and TypeScript.</li>
+<li>Collaborated with UX/UI designers to translate wireframes and mockups into functional, pixel-perfect features.</li>
+<li>Integrated with RESTful APIs to fetch and display dynamic content, improving data interactivity for users.</li>
+</ul>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-12 top-1.5 flex h-8 w-8 items-center justify-center">
+<div class="h-3 w-3 rounded-full border-2 border-sky-blue timeline-dot-shadow"></div>
+</div>
+<div class="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-300 hover:border-sky-blue hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+<h3 class="text-lg font-bold text-[#0F172A]">Creative Agency</h3>
+<p class="text-base font-semibold text-[#475569]">Junior Web Developer</p>
+<p class="mb-4 text-sm text-[#64748B]">2019 - 2020 · New York, NY</p>
+<ul class="list-disc space-y-2 pl-5 text-base text-[#475569]">
+<li>Built marketing websites and landing pages for various clients using HTML, CSS, and JavaScript.</li>
+<li>Assisted senior developers in debugging and resolving issues on existing projects.</li>
+<li>Gained experience with version control systems like Git in a collaborative team environment.</li>
+</ul>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-12 top-1.5 flex h-8 w-8 items-center justify-center">
+<div class="h-3 w-3 rounded-full border-2 border-sky-blue timeline-dot-shadow"></div>
+</div>
+<div class="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-300 hover:border-sky-blue hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)]">
+<h3 class="text-lg font-bold text-[#0F172A]">Startup Hub</h3>
+<p class="text-base font-semibold text-[#475569]">Web Development Intern</p>
+<p class="mb-4 text-sm text-[#64748B]">Summer 2018 · Boston, MA</p>
+<ul class="list-disc space-y-2 pl-5 text-base text-[#475569]">
+<li>Contributed to the development of an internal dashboard tool with supervision from senior engineers.</li>
+<li>Learned foundational concepts of web development frameworks and agile methodologies.</li>
+<li>Participated in daily stand-ups and sprint planning sessions, gaining insight into the software development lifecycle.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
