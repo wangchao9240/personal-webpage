@@ -19,6 +19,15 @@ import { Project } from '@/types/project';
  */
 export const projects: Project[] = [
   {
+    id: 'clisapp',
+    name: 'CLISApp - Queensland Climate Information System',
+    description: 'Mobile app for visualizing real-time climate and environmental data across Queensland with interactive maps and satellite data integration (In Progress)',
+    techStack: ['React Native', 'TypeScript', 'FastAPI', 'Python', 'OpenStreetMap'],
+    imagePath: '/images/projects/clisapp.png',
+    // Note: In active development - Industry Project
+    githubUrl: 'https://github.com/wangchao9240/CLISAPP', // Update with actual repo URL when public
+  },
+  {
     id: 'chatgpt-timeline',
     name: 'ChatGPT Timeline Navigator',
     description: 'Browser extension for navigating ChatGPT conversation history with timeline visualization',

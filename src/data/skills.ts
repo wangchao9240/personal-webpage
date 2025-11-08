@@ -13,12 +13,15 @@ import {
   FaHtml5, 
   FaCss3Alt, 
   FaNode, 
-  FaGitAlt 
+  FaGitAlt,
+  FaPython,
 } from 'react-icons/fa';
 import { 
   SiTypescript, 
   SiJavascript, 
   SiExpress,
+  SiFastapi,
+  SiOpenstreetmap,
 } from 'react-icons/si';
 import { TbServerCog, TbWorldWww } from 'react-icons/tb';
 
@@ -57,6 +60,7 @@ export interface CategorizedSkills {
 export const skillsWithIcons: CategorizedSkills = {
   frontend: [
     { name: 'React', icon: FaReact },
+    { name: 'React Native', icon: FaReact },
     { name: 'Vue', icon: FaVuejs },
     { name: 'TypeScript', icon: SiTypescript },
     { name: 'HTML5', icon: FaHtml5 },
@@ -66,11 +70,14 @@ export const skillsWithIcons: CategorizedSkills = {
   backend: [
     { name: 'Node.js', icon: FaNode },
     { name: 'Express', icon: SiExpress },
+    { name: 'FastAPI', icon: SiFastapi },
+    { name: 'Python', icon: FaPython },
   ],
   tools: [
     { name: 'Git', icon: FaGitAlt },
     { name: 'CMS management', icon: TbServerCog },
     { name: 'SSR', icon: TbWorldWww },
+    { name: 'OpenStreetMap', icon: SiOpenstreetmap },
   ],
 };
 
