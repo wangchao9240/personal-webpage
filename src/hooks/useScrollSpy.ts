@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 /**
  * Section ID type for scroll spy
  */
-export type SectionId = 'hero' | 'about' | 'skills' | 'experience' | 'projects';
+export type SectionId = 'hero' | 'about' | 'skills' | 'projects' | 'experience';
 
 /**
  * Options for useScrollSpy hook
@@ -11,7 +11,7 @@ export type SectionId = 'hero' | 'about' | 'skills' | 'experience' | 'projects';
 export interface UseScrollSpyOptions {
   /**
    * Array of section IDs to track
-   * @default ['hero', 'about', 'skills', 'experience', 'projects']
+   * @default ['hero', 'about', 'skills', 'projects', 'experience']
    */
   sectionIds?: SectionId[];
   
@@ -63,7 +63,7 @@ export interface UseScrollSpyOptions {
  */
 export function useScrollSpy(options: UseScrollSpyOptions = {}): SectionId {
   const {
-    sectionIds = ['hero', 'about', 'skills', 'experience', 'projects'],
+  sectionIds = ['hero', 'about', 'skills', 'projects', 'experience'],
     offset = 200,
     throttleMs = 100,
   } = options;
@@ -137,7 +137,7 @@ export function useScrollSpy(options: UseScrollSpyOptions = {}): SectionId {
  * @deprecated Use useScrollSpy instead for better control
  */
 export function useScrollSpyObserver(
-  sectionIds: SectionId[] = ['hero', 'about', 'skills', 'experience', 'projects']
+  sectionIds: SectionId[] = ['hero', 'about', 'skills', 'projects', 'experience']
 ): SectionId {
   const [activeSection, setActiveSection] = useState<SectionId>('hero');
 
@@ -173,4 +173,3 @@ export function useScrollSpyObserver(
 
   return activeSection;
 }
-

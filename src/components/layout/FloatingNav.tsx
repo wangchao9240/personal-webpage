@@ -33,14 +33,14 @@ const NAV_ITEMS: NavItem[] = [
     ariaLabel: 'Navigate to Skills section',
   },
   {
-    id: 'experience',
-    label: 'Experience',
-    ariaLabel: 'Navigate to Experience section',
-  },
-  {
     id: 'projects',
     label: 'Projects',
     ariaLabel: 'Navigate to Projects section',
+  },
+  {
+    id: 'experience',
+    label: 'Experience',
+    ariaLabel: 'Navigate to Experience section',
   },
 ];
 
@@ -135,4 +135,3 @@ export function FloatingNav() {
     </nav>
   );
 }
-
