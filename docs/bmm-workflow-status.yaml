@@ -40,7 +40,8 @@ workflow_status: |
 
 stories_sequence:
   - projects-priority-order
-todo_story: projects-priority-order
-todo_title: Reorder Projects Section Before Experience
+todo_story: null
+todo_title: null
 in_progress_story: null
-stories_done: []
+stories_done:
+  - projects-priority-order
